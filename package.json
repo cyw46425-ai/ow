@@ -1,0 +1,9 @@
+{
+  "name": "ow-rookie-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Overwatch rookie assistant",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
