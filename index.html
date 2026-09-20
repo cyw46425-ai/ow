@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>守望先锋新手助手</title>
+  <meta name="description" content="面向守望先锋新玩家的问答、英雄选择、阵容克制、背景故事和资讯助手。" />
+  <script>document.documentElement.classList.add("entry-pending")</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23f0642b'/%3E%3Cpath d='M18 42l9-12 5 7 5-7 9 12' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 9v15' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section id="entry-gate" class="entry-gate" aria-labelledby="entry-title" aria-modal="true" role="dialog">
+    <div class="entry-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="entry-grid" aria-hidden="true"></div>
+    <div class="entry-topline"><span class="entry-logo"><b>OW</b> ROOKIE OPS</span><span>BEGINNER COMMAND · 2026</span></div>
+    <div class="entry-type" aria-hidden="true"><span>ROOKIE</span><span>OPS</span></div>
+    <div class="entry-content">
+      <p>OVERWATCH BEGINNER ASSISTANT</p>
+      <h1 id="entry-title">从第一场对局开始，<br>看懂你的每一次选择。</h1>
+      <div class="entry-tags"><span>英雄对位</span><span>地图选角</span><span>版本活动</span><span>赛事直播</span></div>
+      <button id="guest-enter" class="guest-enter" type="button"><span><b>游客快速进入</b><small>无需注册，不保存账号资料</small></span><i>↗</i></button>
+    </div>
+    <div class="entry-foot"><span><b>53</b>英雄档案</span><span><b>7</b>直播入口</span><span><b>0</b>登录门槛</span></div>
+  </section>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="守望先锋新手助手首页">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span><strong>先 锋 助 手</strong><small>ROOKIE OPS</small></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <button class="nav-item active" data-view="assistant"><span>⌁</span>提问助手</button>
+        <button class="nav-item" data-view="heroes"><span>◎</span>英雄数据</button>
+        <button class="nav-item" data-view="library"><span>▦</span>知识百科</button>
+        <button class="nav-item" data-view="news"><span>◈</span>活动资讯</button>
+        <button class="nav-item" data-view="patch"><span>↻</span>版本改动</button>
+        <button class="nav-item" data-view="esports"><span>◆</span>赛事中心</button>
+        <button class="nav-item" data-view="media"><span>▶</span>视频直播</button>
+      </nav>
+      <div class="side-tip">
+        <span class="status-dot"></span>
+        <div><strong>本地知识库已就绪</strong><small>无需 API Key 也能使用</small></div>
+      </div>
+      <p class="side-note">非暴雪官方产品。英雄数值、活动与补丁以游戏客户端及官方页面为准。</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">OVERWATCH BEGINNER COMMAND</p>
+          <h1 id="view-title">今天想了解什么？</h1>
+        </div>
+        <div class="top-actions"><button id="guest-status" class="guest-status" type="button"><i></i>游客模式</button><a class="official-link" href="https://overwatch.blizzard.com/zh-tw/news/" target="_blank" rel="noreferrer">官方最新资讯 ↗</a></div>
+      </header>
+
+      <section id="assistant-view" class="view active">
+        <div class="assistant-grid">
+          <section class="chat-panel" aria-label="对话">
+            <div class="command-hero">
+              <div class="command-copy">
+                <span class="command-status"><i></i> LIVE INTEL · 2026.09.20</span>
+                <h2>你的守望先锋<br><em>战术指挥台</em></h2>
+                <p>英雄对位、地图选角、版本活动与赛事资料，一处完成判断。</p>
+                <div class="command-metrics"><span><b>53</b>英雄档案</span><span><b>8</b>地图策略</span><span><b>7</b>知识分类</span></div>
+              </div>
+              <button class="hero-quick" data-question="现在有什么活动和联动？"><span>本周情报</span><b>查看活动与联动</b><i>→</i></button>
+            </div>
+            <div id="messages" class="messages" aria-live="polite">
+              <article class="message bot welcome">
+                <div class="avatar">OW</div>
+                <div class="bubble">
+                  <p class="bubble-kicker">训练官上线</p>
+                  <h2>欢迎加入守望先锋，新人。</h2>
+                  <p>你可以问我玩法、英雄、克制、阵容、背景故事、活动或版本变化。我会先判断问题类型，再从对应知识库里找答案。</p>
+                  <div class="starter-grid">
+                    <button data-question="我是第一次玩守望先锋，第一天应该做什么？"><b>01</b><span>第一次玩<br><small>从哪里开始？</small></span></button>
+                    <button data-question="完全不会瞄准，推荐我玩什么英雄？"><b>02</b><span>英雄推荐<br><small>按习惯选择</small></span></button>
+                    <button data-question="为什么团战输了要等队友，不应该赶紧回去吗？"><b>03</b><span>对局思路<br><small>理解集合与团战</small></span></button>
+                    <button data-question="现在有什么活动？"><b>04</b><span>活动资讯<br><small>查看可靠入口</small></span></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <form id="ask-form" class="composer">
+              <label class="sr-only" for="question">输入问题</label>
+              <textarea id="question" rows="1" maxlength="300" placeholder="例如：我不擅长瞄准，适合玩哪个位置？"></textarea>
+              <button type="submit" aria-label="发送问题">发送 <span>↗</span></button>
+              <p>Enter 发送 · Shift + Enter 换行</p>
+            </form>
+          </section>
+
+          <aside class="inspector" aria-label="回答依据">
+            <div class="inspector-head">
+              <span>回答依据</span><span class="live-pill">流程可见</span>
+            </div>
+            <div id="trace-empty" class="trace-empty">
+              <div class="radar"><span></span><i></i></div>
+              <strong>等待提问</strong>
+              <p>完成一次提问后，这里会展示分类、检索和回答过程。</p>
+            </div>
+            <div id="trace" class="trace hidden">
+              <div class="trace-stage done"><b>1</b><span><small>问题分类</small><strong id="trace-category">—</strong></span></div>
+              <div class="trace-line"></div>
+              <div class="trace-stage done"><b>2</b><span><small>知识检索</small><strong id="trace-hits">—</strong></span></div>
+              <div id="trace-sources" class="source-list"></div>
+              <div class="trace-line"></div>
+              <div class="trace-stage done"><b>3</b><span><small>组织答案</small><strong>新手友好格式</strong></span></div>
+              <div class="confidence"><span>匹配置信度</span><strong id="trace-confidence">—</strong><i><em id="confidence-bar"></em></i></div>
+              <button id="show-flow" class="text-button">打开英雄数据中心 →</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="heroes-view" class="view">
+        <div class="stats-hero">
+          <div><p class="eyebrow">HERO INTELLIGENCE</p><h2>53 名英雄数据快照</h2><p>胜率是判断环境的参考，不等于英雄克制。可按职责筛选，并查看数据口径。</p></div>
+          <div class="snapshot"><small>官方数据快照</small><strong>2026-09-20</strong><span>PC · 快速比赛 · 美洲 · 全段位</span></div>
+        </div>
+        <div class="stats-toolbar">
+          <div class="search-box"><span>⌕</span><input id="hero-search" type="search" placeholder="搜索英雄或别名，例如：毛妹、76…" /></div>
+          <div id="role-filters" class="filters">
+            <button class="filter active" data-role="all">全部</button><button class="filter" data-role="Tank">重装</button><button class="filter" data-role="Damage">输出</button><button class="filter" data-role="Support">支援</button>
+          </div>
+        </div>
+        <div class="data-notice"><strong>如何看数据：</strong>数据来自暴雪官方英雄统计，口径为 PC、快速比赛职责队列、美洲、全段位、全部地图。胜率受段位、地图、样本和版本影响；助手会把“总体胜率”和“对位克制”分开。<a href="https://overwatch.blizzard.com/en-us/rates/?input=PC&map=all-maps&region=Americas&role=All&rq=0&tier=All" target="_blank" rel="noreferrer">核对官方统计 ↗</a></div>
+        <div id="hero-grid" class="hero-grid"></div>
+      </section>
+
+      <section id="library-view" class="view">
+        <div class="map-showcase-head"><div><p class="eyebrow">MAP TACTICS</p><h2>地图战术预览</h2><p>点击地图，直接向助手询问适合新手的重装选择与分阶段打法。</p></div><span>8 张常用地图</span></div>
+        <div class="map-showcase">
+          <button data-question="我在艾兴瓦尔德应该玩什么T位？" style="--map:url('assets/maps/eichenwalde.jpg')"><span>混合地图</span><b>艾兴瓦尔德</b><small>EICHENWALDE · 德国</small></button>
+          <button data-question="我在国王大道应该玩什么T位？" style="--map:url('assets/maps/kings-row.jpg')"><span>混合地图</span><b>国王大道</b><small>KING'S ROW · 英国</small></button>
+          <button data-question="我在直布罗陀应该玩什么T位？" style="--map:url('assets/maps/watchpoint-gibraltar.jpg')"><span>护送地图</span><b>监测站：直布罗陀</b><small>GIBRALTAR</small></button>
+          <button data-question="我在皇家赛道应该玩什么T位？" style="--map:url('assets/maps/circuit-royal.jpg')"><span>护送地图</span><b>皇家赛道</b><small>CIRCUIT ROYAL · 摩纳哥</small></button>
+          <button data-question="我在多拉多应该玩什么T位？" style="--map:url('assets/maps/dorado.jpg')"><span>护送地图</span><b>多拉多</b><small>DORADO · 墨西哥</small></button>
+          <button data-question="我在漓江塔应该玩什么T位？" style="--map:url('assets/maps/lijiang-tower.jpg')"><span>控制地图</span><b>漓江塔</b><small>LIJIANG TOWER · 中国</small></button>
+          <button data-question="我在努巴尼应该玩什么T位？" style="--map:url('assets/maps/numbani.jpg')"><span>混合地图</span><b>努巴尼</b><small>NUMBANI</small></button>
+          <button data-question="我在里阿尔托应该玩什么T位？" style="--map:url('assets/maps/rialto.jpg')"><span>护送地图</span><b>里阿尔托</b><small>RIALTO · 意大利</small></button>
+        </div>
+        <div class="library-toolbar">
+          <div class="search-box"><span>⌕</span><input id="library-search" type="search" placeholder="搜索英雄、术语、模式或故事…" /></div>
+          <div id="category-filters" class="filters"></div>
+        </div>
+        <div id="library-count" class="result-count"></div>
+        <div id="library-grid" class="library-grid"></div>
+      </section>
+
+      <section id="news-view" class="view">
+        <div class="news-hero">
+          <div><p class="eyebrow">OFFICIAL LIVE INTEL · VERIFIED 2026.09.20</p><h2>活动与联动情报</h2><p>来源限定为暴雪/国服官网与官方赛事站，并明确标记活动时间和核验时间。</p></div>
+          <div class="news-legend"><span class="active">进行中</span><span class="upcoming">即将开始</span><span class="ended">已结束</span></div>
+        </div>
+        <div class="news-feature">
+          <article class="news-card lead active with-art" style="--art:url('assets/news/gallery4.png')">
+            <div class="news-card-top"><span class="status-badge active">进行中</span><time>09.12 — 10.05</time></div>
+            <p class="news-overline">BLIZZCON MYTHIC THANK-YOU</p>
+            <h3>完成一场游戏，领取完整神话套装券</h3>
+            <p>在活动期内完成一场游戏，即可从第 1–14 赛季的符合条件的完整神话套装中选择一套；已经拥有所有基础神话皮肤的玩家可获得 50 神话棱晶。</p>
+            <div class="news-tags"><span>官方确认</span><span>免费奖励</span><span>截至 10 月 5 日</span></div>
+            <a href="https://overwatch.blizzard.com/en-us/news/24294376/" target="_blank" rel="noreferrer">查看 9 月 12 日官方公告 ↗</a>
+          </article>
+          <aside class="intel-rail">
+            <div><small>SOURCE</small><strong>官方</strong><span>Blizzard Entertainment</span></div>
+            <div><small>PUBLISHED</small><strong>09.12</strong><span>公告发布日期</span></div>
+            <div><small>EXPIRES</small><strong>10.05</strong><span>领取及兑换截止</span></div>
+          </aside>
+        </div>
+        <div class="news-section-head"><div><span>01</span><h3>正在进行</h3></div><p>现在可以参与或领取的内容</p></div>
+        <div class="news-grid">
+          <article class="news-card active news-visual"><img src="assets/heroes/junkrat.png" alt="狂鼠官方英雄头像"><div class="news-card-top"><span class="status-badge active">进行中</span><time>09.13 — 09.30</time></div><p class="news-overline">JUNKRAT'S LOOT HUNT</p><h3>“狂鼠”的补给狩猎</h3><p>三周主题反转玩法和挑战正在开放。活动时间来自 9 月 9 日国服正式版本补丁说明。</p><a href="https://ow.blizzard.cn/news/patch-notes/live/2026/09/" target="_blank" rel="noreferrer">国服官方补丁说明 ↗</a></article>
+          <article class="news-card active news-visual"><img src="assets/news/blizzcon.png" alt="守望先锋官方 2026 宣传图"><div class="news-card-top"><span class="status-badge active">进行中</span><time>截至 09.28</time></div><p class="news-overline">BLIZZCON DIGITAL BUNDLE</p><h3>暴雪嘉年华数字礼包</h3><p>礼包可购买至 9 月 28 日，属于付费内容。具体物品与价格应在 Battle.net 商店再次确认。</p><a href="https://overwatch.blizzard.com/en-us/news/24272113/celebrate-blizzcon-2026-with-a-hoard-of-in-game-items/" target="_blank" rel="noreferrer">官方礼包公告 ↗</a></article>
+          <article class="news-card upcoming news-visual"><img src="assets/news/gallery2.png" alt="守望先锋新地图官方预览"><div class="news-card-top"><span class="status-badge upcoming">即将开始</span><time>10.06</time></div><p class="news-overline">SEASON 5</p><h3>第 5 赛季与新护送地图</h3><p>第 5 赛季将于 10 月 6 日上线，带来新支援英雄 Doctrine、监测站：格里姆火山，以及黑影和路霸的大型重做。</p><a href="https://overwatch.blizzard.com/en-us/news/24294376/" target="_blank" rel="noreferrer">官方发布会汇总 ↗</a></article>
+        </div>
+        <div class="news-section-head"><div><span>02</span><h3>线下与赛事活动</h3></div><p>地点、时间与当前状态</p></div>
+        <div class="offline-layout"><div class="offline-poster"><img src="assets/news/owwc.jpg" alt="守望先锋世界杯决赛官方宣传图"><span>官方赛事宣传图 · OWWC 2026</span></div><div class="offline-timeline">
+          <article class="ended"><time>AUG 20–23</time><i></i><div><span>已结束 · 韩国釜山</span><h3>世界杯小组赛</h3><p>国家队阶段在釜山进行，赛果可在官方赛事页面回看。</p></div></article>
+          <article class="ended"><time>SEP 12–13</time><i></i><div><span>已结束 · 美国阿纳海姆</span><h3>BlizzCon 世界杯决赛</h3><p>韩国在金牌赛中击败沙特阿拉伯，法国获得铜牌。</p></div></article>
+          <article class="upcoming"><time>OCT 10–25</time><i></i><div><span>即将开始 · 各赛区</span><h3>OWCS Stage 3 常规赛</h3><p>三个比赛周分别为 10 月 10–11、17–18、24–25 日。</p></div></article>
+          <article class="upcoming"><time>DEC 02–06</time><i></i><div><span>即将开始 · 线下赛事</span><h3>OWCS 世界总决赛</h3><p>官方竞赛详情列出的比赛窗口为 12 月 2–6 日。</p></div></article>
+        </div></div>
+        <div class="news-section-head"><div><span>03</span><h3>历史活动档案</h3></div><p>保留资料，但不会混入当前活动</p></div>
+        <div class="archive-grid">
+          <article><time>2023.03.07 — 04.06</time><span>已结束</span><h3>《一拳超人》联动</h3><p>首个大型 IP 联动；无证骑士士兵：76 为挑战奖励。</p><a href="https://overwatch.blizzard.com/en-us/news/23916447/one-punch-man-x-overwatch-2-event/" target="_blank" rel="noreferrer">官方历史原文 ↗</a></article>
+          <article><time>2026.04.29 — 05.19</time><span>已结束</span><h3>“憎恨的清算”联动</h3><p>五款新传奇皮肤、四款返场皮肤及限时挑战。</p><a href="https://ow.blizzard.cn/news/24266709/index.html" target="_blank" rel="noreferrer">国服官方原文 ↗</a></article>
+          <article><time>2026.05.13 — 06.02</time><span>已结束</span><h3>守望先锋十周年</h3><p>经典版本轮换、全局进度与周年奖励。</p><a href="https://ow.blizzard.cn/news/24266875/" target="_blank" rel="noreferrer">国服官方原文 ↗</a></article>
+          <article><time>2026.07.15 — 07.31</time><span>已结束</span><h3>2026 夏季运动会</h3><p>动感斗球、REMIX 和温斯顿沙滩排球限时开放。</p><a href="https://ow.blizzard.cn/news/patch-notes/live/2026/07/" target="_blank" rel="noreferrer">国服官方补丁 ↗</a></article>
+        </div>
+        <div class="source-footer"><b>真实性规则：</b>不采用搜索摘要或社区转述作为活动状态依据。核验日期：2026-09-20 · <a href="https://ow.blizzard.cn/news/" target="_blank" rel="noreferrer">国服官方新闻</a> · <a href="https://overwatch.blizzard.com/en-us/news/" target="_blank" rel="noreferrer">暴雪官方新闻</a> · <a href="https://esports.overwatch.com/en-us/schedule" target="_blank" rel="noreferrer">官方赛程</a></div>
+      </section>
+
+      <section id="patch-view" class="view">
+        <div class="patch-hero">
+          <div><p class="eyebrow">LIVE PATCH · MAINLAND CN OFFICIAL</p><h2>版本改动</h2><p>当前正式版本：2026 年 9 月 18 日在线修正。数值均来自国服官方补丁页。</p><a href="https://ow.blizzard.cn/news/patch-notes/live/2026/09/" target="_blank" rel="noreferrer">打开完整官方补丁 ↗</a></div>
+          <div class="patch-hero-stack"><img src="assets/heroes/dmon.png" alt="D.Mon"><img src="assets/heroes/sierra.png" alt="西拉"><img src="assets/heroes/jetpackcat.png" alt="飞天猫"><img src="assets/heroes/symmetra.png" alt="秩序之光"></div>
+        </div>
+        <div class="patch-meta"><span><b>最新热修</b>2026-09-18</span><span><b>大型平衡更新</b>2026-09-09</span><span><b>数据范围</b>正式版本 · 5v5 / 6v6</span><span><b>核验时间</b>2026-09-20</span></div>
+        <div class="patch-section-head"><span>HOTFIX</span><div><h3>9 月 18 日：D.Mon 在线修正</h3><p>集中削弱生存、主要威能和武器循环。</p></div></div>
+        <div class="patch-grid hotfix">
+          <article><img src="assets/heroes/dmon.png" alt="D.Mon"><div><b>护甲</b><strong>325 → 275</strong><small>5v5；6v6 为 300 → 250</small></div></article>
+          <article><span>FF</span><div><b>聚焦聚变</b><strong>45 → 36</strong><small>每发子弹伤害</small></div></article>
+          <article><span>BOOST</span><div><b>助推器</b><strong>25 → 30</strong><small>燃料消耗速度提高</small></div></article>
+          <article><span>GUN</span><div><b>聚变连发枪</b><strong>16 → 15</strong><small>冷却 4 秒 → 5 秒</small></div></article>
+        </div>
+        <div class="patch-section-head"><span>BALANCE</span><div><h3>9 月 9 日：重点英雄调整</h3><p>只摘录会直接影响选角和对局判断的变化。</p></div></div>
+        <div class="balance-grid">
+          <article><img src="assets/heroes/domina.png" alt="金驭"><div><h3>金驭</h3><p>终极技能消耗降低 6%，可以更频繁地使用全景牢笼。</p></div><i class="buff">增强</i></article>
+          <article><img src="assets/heroes/zarya.png" alt="查莉娅"><div><h3>查莉娅</h3><p>5v5 粒子屏障冷却从 11 秒延长到 12 秒；投射屏障不变。</p></div><i class="nerf">削弱</i></article>
+          <article><img src="assets/heroes/sierra.png" alt="西拉"><div><h3>西拉</h3><p>弹速 90 → 120 米/秒，基础与追踪弹伤害 9 → 8.5，震地手雷冷却缩短。</p></div><i class="mixed">调整</i></article>
+          <article><img src="assets/heroes/symmetra.png" alt="秩序之光"><div><h3>秩序之光</h3><p>传送面板放置范围 30 → 25 米，重复传送冷却 1 → 1.25 秒。</p></div><i class="nerf">削弱</i></article>
+          <article><img src="assets/heroes/vendetta.png" alt="斩仇"><div><h3>斩仇</h3><p>主要攻击更快响应，同时延长旋风疾步与斩地巨剑恢复时间。</p></div><i class="mixed">调整</i></article>
+          <article><img src="assets/heroes/jetpackcat.png" alt="飞天猫"><div><h3>飞天猫</h3><p>生物猫爪弹伤害与治疗 4.5 → 4；救生索增加目标封锁与地形救援规则。</p></div><i class="nerf">削弱</i></article>
+          <article><img src="assets/heroes/kiriko.png" alt="雾子"><div><h3>雾子</h3><p>治疗符弹速和追踪距离降低；铃的无敌时间和爆炸半径缩小。</p></div><i class="nerf">削弱</i></article>
+          <article><img src="assets/heroes/brigitte.png" alt="布丽吉塔"><div><h3>布丽吉塔</h3><p>25 点基础生命转化为护甲，近距离生存能力提升。</p></div><i class="buff">增强</i></article>
+        </div>
+        <div class="patch-section-head"><span>ARCHIVE</span><div><h3>2026 历史补丁索引</h3><p>旧改动保留用于追溯，不直接代表当前数值。</p></div></div>
+        <div class="patch-archive">
+          <a href="https://ow.blizzard.cn/news/patch-notes/live/2026/04/" target="_blank" rel="noreferrer"><time>APR 2026</time><b>第 2 赛季：尖峰之上</b><span>西拉加入、地图投票与英雄更新</span></a>
+          <a href="https://ow.blizzard.cn/news/patch-notes/live/2026/06/" target="_blank" rel="noreferrer"><time>JUN 2026</time><b>第 3 赛季</b><span>新英雄、混合地图与赛季活动</span></a>
+          <a href="https://ow.blizzard.cn/news/patch-notes/live/2026/07/" target="_blank" rel="noreferrer"><time>JUL 2026</time><b>夏季更新</b><span>夏季运动会与多轮平衡热修</span></a>
+          <a href="https://ow.blizzard.cn/news/patch-notes/live/2026/08/" target="_blank" rel="noreferrer"><time>AUG 2026</time><b>第 4 赛季</b><span>系统反馈、信号重构与活动更新</span></a>
+        </div>
+        <div class="patch-note"><b>阅读提示</b><p>助手中的克制推荐会优先参考这里的当前补丁；但单次热修不会自动让一个英雄从“被克制”变成“绝对克制”。地图、距离、熟练度和阵容仍需一起判断。</p><a href="https://ow.blizzard.cn/news/patch-notes/live/2026/09/" target="_blank" rel="noreferrer">查看未摘录英雄、错误修复与设计师观点 ↗</a></div>
+      </section>
+
+      <section id="esports-view" class="view">
+        <div class="esports-hero">
+          <div><p class="eyebrow">OVERWATCH ESPORTS 2026</p><h2>赛事中心</h2><p>赛历、赛果、观赛入口与新手观赛指南集中在这里。</p></div>
+          <a class="watch-button" href="https://esports.overwatch.com/en-us/schedule" target="_blank" rel="noreferrer">官方完整赛程 ↗</a>
+        </div>
+        <div class="event-grid">
+          <article class="event-card featured"><span>最近完赛 · OWWC</span><h3>2026 守望先锋世界杯</h3><div class="score"><b>韩国</b><strong>4 : 1</strong><b>沙特阿拉伯</b></div><p>金牌赛已于 9 月 13 日结束。法国获得铜牌。</p><a href="https://esports.overwatch.com/en-us/schedule" target="_blank" rel="noreferrer">查看完整赛果 ↗</a></article>
+          <article class="event-card"><span>下一阶段</span><h3>OWCS Stage 3</h3><dl><div><dt>常规赛</dt><dd>10 月</dd></div><div><dt>季后赛</dt><dd>10–11 月</dd></div><div><dt>世界总决赛</dt><dd>12 月</dd></div></dl><p>具体比赛日与对阵以官方赛程实时显示为准。</p></article>
+        </div>
+        <div class="season-track">
+          <h3>2026 赛季路径</h3>
+          <div class="season-steps"><span class="done">季前训练营<small>2月</small></span><span class="done">Stage 1<small>3–5月</small></span><span class="done">Stage 2<small>5–8月</small></span><span class="done">世界杯<small>5–9月</small></span><span class="active">Stage 3<small>8–11月</small></span><span>世界总决赛<small>12月</small></span></div>
+        </div>
+        <div class="esports-guide">
+          <article><b>01</b><h3>新手看什么</h3><p>先观察双方阵容想在哪个距离交战，再看坦克怎样争夺高台和转角。</p></article>
+          <article><b>02</b><h3>团战看什么</h3><p>重点看第一名阵亡者、关键技能与终极技能，而不是只跟随击杀镜头。</p></article>
+          <article><b>03</b><h3>别照抄职业阵容</h3><p>职业队伍依赖高度沟通。学习思路和站位，比机械复制英雄选择更实用。</p></article>
+        </div>
+        <div class="source-footer">赛事信息核验日期：2026-09-20 · 来源：<a href="https://esports.overwatch.com/en-us/schedule" target="_blank" rel="noreferrer">Overwatch Esports 官方赛程</a></div>
+      </section>
+
+      <section id="media-view" class="view">
+        <div class="media-hero">
+          <div>
+            <p class="eyebrow">VIDEO &amp; LIVE DIRECTORY · BILIBILI</p>
+            <h2>视频与直播</h2>
+            <p>从基础教学到娱乐实况，再到职业选手第一视角。卡片均直达 B 站原视频或直播间。</p>
+          </div>
+          <div class="media-summary"><span><b>12</b>精选视频</span><span><b>7</b>直播入口</span><small>信息核验于 2026-09-20</small></div>
+        </div>
+
+        <nav class="media-jump" aria-label="视频直播分类">
+          <a href="#pro-lives"><span>01</span>大神直播<small>职业选手 · 官方赛事</small></a>
+          <a href="#teaching-videos"><span>02</span>新手教学<small>规则 · 枪法 · 地图</small></a>
+          <a href="#fun-videos"><span>03</span>娱乐视频<small>鸭皮 · 陆子由</small></a>
+        </nav>
+
+        <section id="pro-lives" class="media-section live-section">
+          <div class="media-section-head"><div><span>LIVE</span><h3>大神直播</h3></div><p>点击进入原直播间；是否开播以 B 站实时状态为准</p></div>
+          <div class="live-grid">
+            <a class="live-card" href="https://live.bilibili.com/4792266" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-guxue.jpg" alt="OA-GUXUE B站直播间封面" loading="lazy"><span>职业选手</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>OA-GUXUE</b><small>职业重装选手</small></p><strong>房间 4792266</strong></div></a>
+            <a class="live-card" href="https://live.bilibili.com/6524090" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-shy.jpg" alt="OA-SHY B站直播间封面" loading="lazy"><span>职业选手</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>OA-SHY</b><small>职业输出选手</small></p><strong>房间 6524090</strong></div></a>
+            <a class="live-card" href="https://live.bilibili.com/31294374" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-leave.jpg" alt="Leave B站直播间封面" loading="lazy"><span>职业选手</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>Leave / 嘉豪</b><small>职业输出选手</small></p><strong>房间 31294374</strong></div></a>
+            <a class="live-card" href="https://live.bilibili.com/925378" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-farway.jpg" alt="Farway远芳芳 B站直播间封面" loading="lazy"><span>职业选手</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>Farway 远芳芳</b><small>职业支援选手</small></p><strong>房间 925378</strong></div></a>
+            <a class="live-card" href="https://live.bilibili.com/7395955" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-kyo.jpg" alt="Kyo B站直播间封面" loading="lazy"><span>高分选手</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>Kyo_ow</b><small>支援选手 / 高分主播</small></p><strong>房间 7395955</strong></div></a>
+            <a class="live-card" href="https://live.bilibili.com/30040584" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-sunzo.jpg" alt="OA-Sunzo B站直播间封面" loading="lazy"><span>职业选手</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>OA-Sunzo</b><small>职业输出选手</small></p><strong>房间 30040584</strong></div></a>
+            <a class="live-card official-live" href="https://live.bilibili.com/23612045" target="_blank" rel="noreferrer"><div class="live-cover"><img src="assets/video/live-esports.jpg" alt="守望先锋电竞官方B站直播间封面" loading="lazy"><span>官方赛事</span><i>进入直播间 ↗</i></div><div><span class="offline-dot"></span><p><b>守望先锋电竞</b><small>官方赛事直播与回放入口</small></p><strong>房间 23612045</strong></div></a>
+          </div>
+          <div class="media-source-note"><b>直播信息</b><span>房间号与当前封面核验于 2026-09-20。直播标题、封面和开播状态会实时变化，请以进入 B 站房间后显示为准。</span></div>
+        </section>
+
+        <section id="teaching-videos" class="media-section">
+          <div class="media-section-head"><div><span>LEARN</span><h3>教学视频</h3></div><p>先理解规则和职责，再练枪法、地图与模式</p></div>
+          <div class="media-grid">
+            <a class="media-card featured" href="https://www.bilibili.com/video/BV1AjgP65EnN/" target="_blank" rel="noreferrer">
+              <div class="media-cover"><img src="assets/video/teach-official.jpg" alt="《守望先锋》新手教学特工入门篇封面" loading="lazy"><span class="media-kind official">官方教学</span><time>02:12</time><i>▶</i></div>
+              <div class="media-copy"><h4>《守望先锋》新手教学-特工入门篇</h4><p><b>守望先锋</b><span>2026-08-14</span></p><small>从当前版本的基本目标与特工定位开始</small></div>
+            </a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1dH4y1A7s4/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/teach-first-match.jpg" alt="守望先锋纯新手教学封面" loading="lazy"><span class="media-kind">零基础</span><time>17:39</time><i>▶</i></div><div class="media-copy"><h4>守望先锋纯新手教学，从进游戏到第一把</h4><p><b>只要红茶可以嘛</b><span>2024-04-25</span></p><small>适合第一次安装、还没打过完整对局的玩家</small></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1U1AzexEJ9/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/teach-aim.jpg" alt="守望先锋基本射击技巧封面" loading="lazy"><span class="media-kind">枪法基础</span><time>06:59</time><i>▶</i></div><div class="media-copy"><h4>【守望先锋】基本射击技巧</h4><p><b>卡破伏岓</b><span>2025-02-19</span></p><small>跟枪、预瞄与基础射击习惯</small></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1P4NNebESv/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/teach-map.jpg" alt="根据地图选择英雄阵容视频封面" loading="lazy"><span class="media-kind">地图选角</span><time>08:28</time><i>▶</i></div><div class="media-copy"><h4>【守望先锋】如何根据地图选择英雄/阵容？</h4><p><b>卡破伏岓</b><span>2025-02-07</span></p><small>理解高台、射程与阵容选择的关系</small></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1uL4y1j7YQ/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/teach-roles.jpg" alt="游戏模式及职业介绍视频封面" loading="lazy"><span class="media-kind">职责模式</span><time>07:44</time><i>▶</i></div><div class="media-copy"><h4>从零开始教程 #1：游戏模式及职业介绍</h4><p><b>羽黑凛夏</b><span>2022-04-07</span></p><small>内容较早，适合补基础概念；数值以当前版本为准</small></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV128LbzJEd5/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/teach-arena.jpg" alt="角斗领域新手入门教学封面" loading="lazy"><span class="media-kind">角斗领域</span><time>11:50</time><i>▶</i></div><div class="media-copy"><h4>角斗领域新手入门攻略 / 教学</h4><p><b>守望at春语</b><span>2025-04-23</span></p><small>模式规则、经济与强化选择入门</small></div></a>
+          </div>
+        </section>
+
+        <section id="fun-videos" class="media-section">
+          <div class="media-section-head"><div><span>WATCH</span><h3>娱乐视频</h3></div><p>精选鸭皮、陆子由等创作者的守望内容</p></div>
+          <div class="media-grid">
+            <a class="media-card" href="https://www.bilibili.com/video/BV1Fuuy6EEHE/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/fun-duck-evolution.jpg" alt="强烈建议取消进化皮视频封面" loading="lazy"><span class="media-kind creator">鸭皮</span><time>00:58</time><i>▶</i></div><div class="media-copy"><h4>强烈建议取消进化皮！</h4><p><b>鸭皮_</b><span>2026-08-12</span></p></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1cn8tzBEVE/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/fun-duck-tips.jpg" alt="守望500强都不知道的技巧视频封面" loading="lazy"><span class="media-kind creator">鸭皮</span><time>01:07</time><i>▶</i></div><div class="media-copy"><h4>守望500强都不知道的技巧，第三期！</h4><p><b>鸭皮_</b><span>2025-07-26</span></p></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV12yokBrEmb/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/fun-duck-live.jpg" alt="鸭皮直播回放视频封面" loading="lazy"><span class="media-kind creator">鸭皮回放</span><time>05:19</time><i>▶</i></div><div class="media-copy"><h4>直播掉宝、传说皮与补给箱回放</h4><p><b>鸭皮_</b><span>2026-04-27</span></p></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1DeqDBQEji/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/fun-lu-busan.jpg" alt="釜山牛牛不能扭屁股了视频封面" loading="lazy"><span class="media-kind creator alt">陆子由</span><time>10:28</time><i>▶</i></div><div class="media-copy"><h4>釜山牛牛不能扭屁股了</h4><p><b>陆子由_哈基牛</b><span>2025-12-19</span></p></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1J8k2BqELC/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/fun-lu-thunder.jpg" alt="最雷霆的一集视频封面" loading="lazy"><span class="media-kind creator alt">陆子由</span><time>12:14</time><i>▶</i></div><div class="media-copy"><h4>最雷霆的一集</h4><p><b>陆子由_哈基牛</b><span>2025-11-12</span></p></div></a>
+            <a class="media-card" href="https://www.bilibili.com/video/BV1UrdxYKEbj/" target="_blank" rel="noreferrer"><div class="media-cover"><img src="assets/video/fun-lu-misjudge.jpg" alt="一朝误判满盘皆输视频封面" loading="lazy"><span class="media-kind creator alt">陆子由</span><time>06:46</time><i>▶</i></div><div class="media-copy"><h4>一朝误判满盘皆输啊</h4><p><b>陆子由_哈基牛</b><span>2025-04-09</span></p></div></a>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </div>
+
+  <dialog id="detail-dialog">
+    <button class="dialog-close" aria-label="关闭">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="heroes-data.js"></script>
+  <script src="knowledge.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
