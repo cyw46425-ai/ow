@@ -6,6 +6,7 @@
   const sessionState={lastCounterTarget:null};
   const conversation=[];
   let requestSerial=0;
+  let pendingAnswer=false;
 
   function setEntry(open){
     const gate=$("#entry-gate");
@@ -152,6 +153,7 @@
   }
   async function ask(question){
     const text=question.trim(); if(!text)return;
+    if(pendingAnswer)return;
     const answerId=`a${Date.now()}-${++requestSerial}`;
     $(".chat-panel").classList.add("conversation-active");
     const messages=$("#messages");
@@ -166,6 +168,7 @@
       $("#question").value="";resizeTextarea();return;
     }
     const classified=window.OW_RAG?.classify(text,categories)||classify(text);
+    pendingAnswer=true;
     const loadingId=`loading-${answerId}`;
     messages.insertAdjacentHTML("beforeend",`<article id="${loadingId}" class="message bot is-loading"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">正在检索</p><p>正在匹配版本、知识片段与引用来源…</p></div></article>`);
     const submit=$("#ask-form button[type=submit]"); submit.disabled=true;
@@ -189,7 +192,7 @@
       const primary=hits[0].item,cat=categories.find(c=>c.id===primary.cat);
       messages.insertAdjacentHTML("beforeend",`<article class="message bot"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">${cat.name} · 安全降级</p>${answerHtml(primary)}${feedbackHtml(answerId)}</div></article>`);
       updateTrace(cat,hits,52,"本地安全降级");
-    }finally{submit.disabled=false;}
+    }finally{pendingAnswer=false;submit.disabled=false;}
     requestAnimationFrame(()=>messages.scrollTo({top:messages.scrollHeight,behavior:"smooth"}));
     $("#question").value=""; resizeTextarea();
   }
