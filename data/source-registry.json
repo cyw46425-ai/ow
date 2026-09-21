@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-09-20",
+  "sources": [
+    {
+      "id": "blizzard-hero-rates",
+      "name": "Blizzard Hero Statistics",
+      "url": "https://overwatch.blizzard.com/en-us/rates/",
+      "content": ["win_rate", "pick_rate", "ban_rate"],
+      "authority": "official",
+      "update_policy": "manual_snapshot_per_patch",
+      "required_metadata": ["platform", "region", "mode", "rank", "map", "captured_at"],
+      "fallback": "display_last_verified_snapshot_with_date"
+    },
+    {
+      "id": "blizzard-news-global",
+      "name": "Overwatch Global News",
+      "url": "https://overwatch.blizzard.com/en-us/news/",
+      "content": ["patch", "event", "collaboration", "official_announcement"],
+      "authority": "official",
+      "update_policy": "review_before_each_release",
+      "required_metadata": ["published_at", "starts_at", "ends_at", "status", "verified_at"],
+      "fallback": "do_not_claim_current_status"
+    },
+    {
+      "id": "blizzard-news-cn",
+      "name": "守望先锋国服新闻",
+      "url": "https://ow.blizzard.cn/news/",
+      "content": ["china_server_event", "offline_event", "local_announcement"],
+      "authority": "official",
+      "update_policy": "review_before_each_release",
+      "required_metadata": ["published_at", "status", "verified_at"],
+      "fallback": "link_to_official_page"
+    },
+    {
+      "id": "overwatch-esports",
+      "name": "Overwatch Esports Schedule",
+      "url": "https://esports.overwatch.com/en-us/schedule",
+      "content": ["schedule", "result", "tournament"],
+      "authority": "official",
+      "update_policy": "verify_weekly_during_season",
+      "required_metadata": ["event", "stage", "timezone", "verified_at"],
+      "fallback": "avoid_unverified_future_fixture"
+    },
+    {
+      "id": "counterwatch",
+      "name": "CounterWatch Community Matchups",
+      "url": "https://www.counterwatch.gg/stats/overwatch/heroes",
+      "content": ["matchup", "community_sample"],
+      "authority": "community",
+      "update_policy": "snapshot_per_patch",
+      "required_metadata": ["sample_size", "methodology", "captured_at", "minimum_contributors"],
+      "fallback": "mechanism_only_medium_confidence"
+    },
+    {
+      "id": "bilibili",
+      "name": "Bilibili original video and live pages",
+      "url": "https://www.bilibili.com/",
+      "content": ["tutorial", "creator_video", "live_room"],
+      "authority": "platform_original_link",
+      "update_policy": "manual_link_check_monthly",
+      "required_metadata": ["creator", "published_at", "original_url", "verified_at"],
+      "fallback": "hide_broken_link"
+    }
+  ]
+}
+
+

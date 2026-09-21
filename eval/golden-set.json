@@ -1,0 +1,62 @@
+[
+  {"id":"b01","query":"我第一次玩守望先锋，第一天应该干什么","category":"basics","expected":["first-day"]},
+  {"id":"b02","query":"完全没玩过，从哪里开始","category":"basics","expected":["first-day"]},
+  {"id":"b03","query":"为什么不能只追着人杀","category":"basics","expected":["core-goal"]},
+  {"id":"b04","query":"团灭后为什么要等队友一起走","category":"basics","expected":["regroup"]},
+  {"id":"b05","query":"T位、C位和奶分别负责什么","category":"basics","expected":["roles"]},
+  {"id":"b06","query":"推车图和占点图怎么玩","category":"basics","expected":["modes"]},
+  {"id":"b07","query":"我总是莫名其妙突然死掉怎么办","category":"basics","expected":["survival"]},
+  {"id":"b08","query":"新手准星和灵敏度怎么设置","category":"basics","expected":["settings"]},
+  {"id":"b09","query":"守望先锋里的集火和掉点是什么意思","category":"basics","expected":["terms"]},
+  {"id":"b10","query":"有没有适合新手的教学视频","category":"basics","expected":["video-learning"]},
+
+  {"id":"h01","query":"我枪法很差适合玩谁","category":"heroes","expected":["aimless"]},
+  {"id":"h02","query":"完全不会瞄准可以玩什么英雄","category":"heroes","expected":["aimless"]},
+  {"id":"h03","query":"怎么判断我适合重装输出还是支援","category":"heroes","expected":["choose-role"]},
+  {"id":"h04","query":"什么时候应该换英雄","category":"heroes","expected":["swap"]},
+  {"id":"h05","query":"重装新手应该先练什么","category":"heroes","expected":["tank-start"]},
+  {"id":"h06","query":"新手玩辅助要注意什么","category":"heroes","expected":["support-start"]},
+  {"id":"h07","query":"胜率和选取率怎么看，胜率高就是克制吗","category":"heroes","expected":["stats-reading"]},
+
+  {"id":"s01","query":"英雄克制是不是选出来就稳赢","category":"strategy","expected":["counter-principle"]},
+  {"id":"s02","query":"一直被源氏和猎空切后排怎么办","category":"strategy","expected":["anti-dive"]},
+  {"id":"s03","query":"对面黑百合一直架高台怎么处理","category":"strategy","expected":["anti-sniper"]},
+  {"id":"s04","query":"法老之鹰一直在天上应该怎么打","category":"strategy","expected":["anti-flyer"]},
+  {"id":"s05","query":"近身阵容、放狗和长枪阵容有什么区别","category":"strategy","expected":["comps"]},
+  {"id":"s06","query":"对面玩毛妹，我应该怎么克制","category":"strategy","expected":["zarya-detail"]},
+  {"id":"s07","query":"查莉娅开盾的时候到底要不要打","category":"strategy","expected":["zarya-detail"]},
+
+  {"id":"l01","query":"智械危机和守望先锋组织是什么关系","category":"lore","expected":["world"]},
+  {"id":"l02","query":"黑爪Talon是什么组织","category":"lore","expected":["talon"]},
+  {"id":"l03","query":"源氏和半藏为什么反目","category":"lore","expected":["shimadas"]},
+  {"id":"l04","query":"安娜法老之鹰和士兵76是什么关系","category":"lore","expected":["ana-family"]},
+
+  {"id":"n01","query":"现在有什么最新活动和联动","category":"news","expected":["current-news"]},
+  {"id":"n02","query":"一拳超人联动现在还在吗","category":"news","expected":["one-punch-2023"]},
+  {"id":"n03","query":"2026十周年庆典是什么时候","category":"news","expected":["anniversary-2026"]},
+  {"id":"n04","query":"憎恨的清算联动结束了吗","category":"news","expected":["hatred-2026"]},
+  {"id":"n05","query":"夏季运动会历史活动时间","category":"news","expected":["summer-games-2026"]},
+  {"id":"n06","query":"把以前的联动活动列给我","category":"news","expected":["event-archive"]},
+  {"id":"n07","query":"最近有什么线下活动可以去","category":"news","expected":["offline-events"]},
+  {"id":"n08","query":"想看鸭皮和陆子由的视频","category":"news","expected":["creator-videos"]},
+
+  {"id":"p01","query":"当前最新热修改了什么","category":"patch","expected":["patch-2026-09-18"]},
+  {"id":"p02","query":"9月9日的平衡补丁内容","category":"patch","expected":["patch-2026-09-09"]},
+  {"id":"p03","query":"哪里能查看2026年的历史补丁","category":"patch","expected":["patch-archive-2026"]},
+  {"id":"p04","query":"回答版本改动时怎么避免拿旧补丁当新的","category":"patch","expected":["patch-rule"]},
+  {"id":"p05","query":"天赋子职责和英雄禁用是什么","category":"patch","expected":["perks"]},
+
+  {"id":"e01","query":"OWCS到底是什么比赛","category":"esports","expected":["owcs-structure"]},
+  {"id":"e02","query":"守望先锋世界杯和OWCS有什么不同","category":"esports","expected":["owwc","owcs-structure"]},
+  {"id":"e03","query":"新手看职业比赛应该重点看什么","category":"esports","expected":["watch-pro"]},
+  {"id":"e04","query":"GUXUE和SHY在哪里直播","category":"esports","expected":["pro-live-rooms"]},
+  {"id":"e05","query":"farway kyo sunzo的B站直播间","category":"esports","expected":["pro-live-rooms"]},
+  {"id":"e06","query":"2026世界杯冠军和比分","category":"esports","expected":["owwc"]},
+
+  {"id":"a01","query":"最新一拳超人活动是不是2026年9月开始","category":"news","expected":["one-punch-2023","current-news"]},
+  {"id":"a02","query":"总胜率最高的英雄一定克制毛妹吗","category":"heroes","expected":["stats-reading","zarya-detail"]},
+  {"id":"a03","query":"我不想换英雄，打不过的时候还能怎么调整","category":"heroes","expected":["swap","counter-principle"]},
+  {"id":"a04","query":"直播页面能打开是不是代表选手正在播","category":"esports","expected":["pro-live-rooms"]}
+]
+
+

@@ -1,0 +1,14 @@
+{
+  "evaluated_at": "2026-09-21T02:29:30.457Z",
+  "rag_version": "2.0.0",
+  "cases": 51,
+  "metrics": {
+    "category_accuracy": 1,
+    "recall_at_3": 1,
+    "recall_at_5": 1,
+    "mrr_at_5": 0.9346
+  },
+  "failure_count": 0,
+  "failures": []
+}
+

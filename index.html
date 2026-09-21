@@ -41,7 +41,7 @@
       </nav>
       <div class="side-tip">
         <span class="status-dot"></span>
-        <div><strong>本地知识库已就绪</strong><small>无需 API Key 也能使用</small></div>
+        <div><strong id="ai-status-title">混合检索已就绪</strong><small id="ai-status-copy">DeepSeek 未连接时自动使用本地答案</small></div>
       </div>
       <p class="side-note">非暴雪官方产品。英雄数值、活动与补丁以游戏客户端及官方页面为准。</p>
     </aside>
@@ -103,11 +103,11 @@
             <div id="trace" class="trace hidden">
               <div class="trace-stage done"><b>1</b><span><small>问题分类</small><strong id="trace-category">—</strong></span></div>
               <div class="trace-line"></div>
-              <div class="trace-stage done"><b>2</b><span><small>知识检索</small><strong id="trace-hits">—</strong></span></div>
+              <div class="trace-stage done"><b>2</b><span><small>混合检索</small><strong id="trace-hits">—</strong></span></div>
               <div id="trace-sources" class="source-list"></div>
               <div class="trace-line"></div>
-              <div class="trace-stage done"><b>3</b><span><small>组织答案</small><strong>新手友好格式</strong></span></div>
-              <div class="confidence"><span>匹配置信度</span><strong id="trace-confidence">—</strong><i><em id="confidence-bar"></em></i></div>
+              <div class="trace-stage done"><b>3</b><span><small>组织答案</small><strong id="trace-mode">等待生成</strong></span></div>
+              <div class="confidence"><span>检索匹配度</span><strong id="trace-confidence">—</strong><i><em id="confidence-bar"></em></i></div>
               <button id="show-flow" class="text-button">打开英雄数据中心 →</button>
             </div>
           </aside>
@@ -315,6 +315,8 @@
 
   <script src="heroes-data.js"></script>
   <script src="knowledge.js"></script>
+  <script src="rag-engine.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+

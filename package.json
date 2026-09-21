@@ -1,9 +1,12 @@
 {
   "name": "ow-rookie-assistant",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Static Overwatch rookie assistant",
+  "type": "module",
+  "description": "Hybrid RAG Overwatch rookie decision assistant",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "evaluate": "node scripts/evaluate-rag.mjs",
+    "test": "npm run build && npm run evaluate && node scripts/test-api.mjs"
   }
 }

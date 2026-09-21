@@ -4,6 +4,8 @@
   let activeFilter="all";
   let activeRole="all";
   const sessionState={lastCounterTarget:null};
+  const conversation=[];
+  let requestSerial=0;
 
   function setEntry(open){
     const gate=$("#entry-gate");
@@ -125,37 +127,78 @@
     const links=(a.links||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noreferrer">${l.label} ↗</a>`).join(" · ");
     return `<h3>简单结论</h3><p>${a.conclusion}</p><h3>为什么</h3><p>${a.why}</p><h3>新手马上可以做</h3><ol>${a.steps.map(x=>`<li>${x}</li>`).join("")}</ol><h3>常见误区</h3><p>${a.pitfall}</p>${item.dynamic?`<p class="version-warning">版本提醒：这类信息变化较快，请用下方官方入口核对当前日期与游戏内规则。</p>`:""}${links?`<p>${links}</p>`:""}`;
   }
-  function ask(question){
+  function ragAnswerHtml(answer,context,mode,usage){
+    if(!answer)return `<h3>暂时无法确认</h3><p>当前知识库没有足够证据。请补充英雄、职责、地图或版本，我不会在证据不足时猜测。</p>`;
+    const used=new Set(answer.used_sources||[]);
+    const sources=(context||[]).filter(source=>!used.size||used.has(source.source_id));
+    const sourceHtml=sources.length?`<div class="rag-citations"><h3>引用依据</h3>${sources.map(source=>{
+      const link=source.links?.[0];
+      const title=escapeHtml(source.title);
+      const meta=`${escapeHtml(source.source_id)} · ${escapeHtml(source.source_type||"curated")} · ${escapeHtml(source.as_of||"")}`;
+      return `<article><span>${meta}</span><b>${link?`<a href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${title} ↗</a>`:title}</b></article>`;
+    }).join("")}</div>`:"";
+    const modeName=mode==="deepseek_rag"?"DeepSeek · 证据增强生成":"本地混合检索 · 降级回答";
+    const usageText=usage?.total_tokens?` · ${usage.total_tokens} tokens`:"";
+    return `<h3>直接答案</h3><p>${escapeHtml(answer.conclusion)}</p><h3>为什么</h3><p>${escapeHtml(answer.why)}</p>${answer.steps?.length?`<h3>现在可以怎么做</h3><ol>${answer.steps.map(step=>`<li>${escapeHtml(step)}</li>`).join("")}</ol>`:""}${answer.caveat?`<p class="version-warning"><b>限制与条件：</b>${escapeHtml(answer.caveat)}</p>`:""}${sourceHtml}<div class="answer-meta"><span>${modeName}</span><span>Top ${(context||[]).length} 检索${usageText}</span></div>`;
+  }
+  function feedbackHtml(answerId){
+    return `<div class="answer-feedback" data-answer-id="${answerId}"><span>这个回答有帮助吗？</span><button type="button" data-feedback="helpful">有帮助</button><button type="button" data-feedback="wrong">事实有误</button><button type="button" data-feedback="stale">信息过期</button><button type="button" data-feedback="miss">没回答问题</button></div>`;
+  }
+  function saveFeedback(answerId,value){
+    let records=[];
+    try{records=JSON.parse(localStorage.getItem("ow_answer_feedback")||"[]");}catch(_e){}
+    records.push({answerId,value,at:new Date().toISOString()});
+    try{localStorage.setItem("ow_answer_feedback",JSON.stringify(records.slice(-100)));}catch(_e){}
+  }
+  async function ask(question){
     const text=question.trim(); if(!text)return;
+    const answerId=`a${Date.now()}-${++requestSerial}`;
     $(".chat-panel").classList.add("conversation-active");
     const messages=$("#messages");
     messages.insertAdjacentHTML("beforeend",`<article class="message user"><div class="avatar">你</div><div class="bubble"><p>${escapeHtml(text)}</p></div></article>`);
     const special=mapResponse(text)||counterResponse(text);
     if(special){
       setTimeout(()=>{
-        messages.insertAdjacentHTML("beforeend",`<article class="message bot"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">智能对位分析</p>${special.html}</div></article>`);
-        requestAnimationFrame(()=>messages.scrollTo({top:messages.scrollHeight,behavior:"smooth"})); updateTrace(special.cat,special.hits,special.confidence);
+        messages.insertAdjacentHTML("beforeend",`<article class="message bot"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">结构化决策工具</p>${special.html}${feedbackHtml(answerId)}</div></article>`);
+        conversation.push({role:"user",content:text},{role:"assistant",content:"已返回结构化英雄或地图建议"});
+        requestAnimationFrame(()=>messages.scrollTo({top:messages.scrollHeight,behavior:"smooth"})); updateTrace(special.cat,special.hits,special.confidence,"结构化规则 · 可解释");
       },260);
       $("#question").value="";resizeTextarea();return;
     }
-    const classified=classify(text); let hits=retrieve(text,classified.id);
-    if(!hits.length||classified.id==="fallback")hits=[{item:kb.find(x=>x.id==="fallback-help"),score:1}];
-    const primary=hits[0].item, cat=categories.find(c=>c.id===primary.cat);
-    const confidence=Math.min(97,Math.max(52,Math.round(48+hits[0].score*3)));
-    const meta=`<div class="answer-meta"><span>${cat.name}</span><span>知识库命中 ${hits.length} 条</span><span>匹配度 ${confidence}%</span></div>`;
-    setTimeout(()=>{
-      messages.insertAdjacentHTML("beforeend",`<article class="message bot"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">${cat.name}</p>${answerHtml(primary)}${meta}</div></article>`);
-      requestAnimationFrame(()=>messages.scrollTo({top:messages.scrollHeight,behavior:"smooth"}));
-      updateTrace(cat,hits,confidence);
-    },260);
+    const classified=window.OW_RAG?.classify(text,categories)||classify(text);
+    const loadingId=`loading-${answerId}`;
+    messages.insertAdjacentHTML("beforeend",`<article id="${loadingId}" class="message bot is-loading"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">正在检索</p><p>正在匹配版本、知识片段与引用来源…</p></div></article>`);
+    const submit=$("#ask-form button[type=submit]"); submit.disabled=true;
+    try{
+      const result=await window.OW_RAG.ask(text,{category:classified.id,history:conversation,topK:5});
+      const top=result.context?.[0];
+      const cat=categories.find(c=>c.id===(top?.category||classified.id))||categories.find(c=>c.id==="fallback");
+      const confidence=result.diagnostics?.retrieval?.[0]?.match||52;
+      const html=ragAnswerHtml(result.answer,result.context,result.mode,result.usage);
+      document.getElementById(loadingId)?.remove();
+      messages.insertAdjacentHTML("beforeend",`<article class="message bot"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">${escapeHtml(cat.name)} · RAG V2</p>${html}${feedbackHtml(answerId)}</div></article>`);
+      conversation.push({role:"user",content:text},{role:"assistant",content:result.answer?.conclusion||"证据不足"});
+      if(conversation.length>8)conversation.splice(0,conversation.length-8);
+      updateTrace(cat,result.diagnostics?.retrieval||[],confidence,result.mode==="deepseek_rag"?`DeepSeek · ${escapeHtml(result.model||"chat")}`:"本地降级回答");
+      $("#ai-status-title").textContent=result.mode==="deepseek_rag"?"DeepSeek RAG 已连接":"混合检索已就绪";
+      $("#ai-status-copy").textContent=result.mode==="deepseek_rag"?"回答受检索证据与版本约束":"模型不可用时自动返回本地答案";
+    }catch(error){
+      document.getElementById(loadingId)?.remove();
+      let hits=retrieve(text,classified.id);
+      if(!hits.length)hits=[{item:kb.find(x=>x.id==="fallback-help"),score:1}];
+      const primary=hits[0].item,cat=categories.find(c=>c.id===primary.cat);
+      messages.insertAdjacentHTML("beforeend",`<article class="message bot"><div class="avatar">OW</div><div class="bubble"><p class="bubble-kicker">${cat.name} · 安全降级</p>${answerHtml(primary)}${feedbackHtml(answerId)}</div></article>`);
+      updateTrace(cat,hits,52,"本地安全降级");
+    }finally{submit.disabled=false;}
     requestAnimationFrame(()=>messages.scrollTo({top:messages.scrollHeight,behavior:"smooth"}));
     $("#question").value=""; resizeTextarea();
   }
-  function updateTrace(cat,hits,confidence){
+  function updateTrace(cat,hits,confidence,mode="新手友好格式"){
     $("#trace-empty").classList.add("hidden"); $("#trace").classList.remove("hidden");
     $("#trace-category").textContent=cat.name; $("#trace-hits").textContent=`命中 ${hits.length} 个片段`;
     $("#trace-confidence").textContent=confidence+"%"; $("#confidence-bar").style.width=confidence+"%";
-    $("#trace-sources").innerHTML=hits.map((h,i)=>`<div class="source-chip">${i+1}. ${h.item.title}</div>`).join("");
+    $("#trace-mode").textContent=mode;
+    $("#trace-sources").innerHTML=hits.map((h,i)=>`<div class="source-chip">${i+1}. ${escapeHtml(h.title||h.item?.title||"知识片段")}${Number.isFinite(h.score)?`<small>${h.score.toFixed(2)}</small>`:""}</div>`).join("");
   }
   function resizeTextarea(){const el=$("#question");el.style.height="auto";el.style.height=Math.min(el.scrollHeight,120)+"px";}
   function switchView(id){
@@ -197,6 +240,7 @@
     const card=e.target.closest(".kb-card"); if(card)openDetail(card.dataset.id);
     const role=e.target.closest("[data-role]"); if(role){activeRole=role.dataset.role;$$("[data-role]").forEach(f=>f.classList.toggle("active",f===role));renderHeroes();}
     const hero=e.target.closest(".hero-stat"); if(hero)openHero(hero.dataset.hero);
+    const feedback=e.target.closest("[data-feedback]"); if(feedback){const box=feedback.closest(".answer-feedback");saveFeedback(box.dataset.answerId,feedback.dataset.feedback);box.innerHTML="<span>已记录，感谢反馈。</span>";}
     if(e.target.closest("#show-flow"))switchView("heroes");
     if(e.target.closest(".dialog-close"))$("#detail-dialog").close();
   });
@@ -210,3 +254,4 @@
   const requestedView=new URLSearchParams(location.search).get("view");
   if(requestedView&&$("#"+requestedView+"-view"))switchView(requestedView);
 })();
+
