@@ -43,6 +43,16 @@
       "fallback": "avoid_unverified_future_fixture"
     },
     {
+      "id": "owcs-cn-event-guides",
+      "name": "守望先锋国服 OWCS 官方观赛指南",
+      "url": "https://ow.blizzard.cn/owcs/",
+      "content": ["regional_team", "international_qualifier", "event_result", "broadcast_guide"],
+      "authority": "official",
+      "update_policy": "verify_each_stage",
+      "required_metadata": ["stage", "published_at", "verified_at"],
+      "fallback": "retain_historical_result_but_recheck_current_roster"
+    },
+    {
       "id": "counterwatch",
       "name": "CounterWatch Community Matchups",
       "url": "https://www.counterwatch.gg/stats/overwatch/heroes",
@@ -86,7 +96,7 @@
       "id": "liquipedia-overwatch",
       "name": "Liquipedia Overwatch",
       "url": "https://liquipedia.net/overwatch/Main_Page",
-      "content": ["player_history", "roster", "tournament_archive"],
+      "content": ["player_history", "player_alias", "signature_heroes", "team_roster", "team_achievement", "tournament_archive"],
       "authority": "community_maintained_esports_database",
       "update_policy": "cross_check_with_official_schedule_before_claiming_current_status",
       "required_metadata": ["page_updated_at", "verified_at", "official_cross_check"],

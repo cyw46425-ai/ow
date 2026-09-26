@@ -22,6 +22,31 @@
       .trim();
   }
 
+  function containsTerm(text, term) {
+    const normalizedTerm = normalize(term);
+    if (!normalizedTerm || normalizedTerm.length < 2) return false;
+    if (/^[a-z0-9._+-]+$/.test(normalizedTerm)) {
+      const escaped = normalizedTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return new RegExp(`(^|[^a-z0-9])${escaped}($|[^a-z0-9])`, "i").test(text);
+    }
+    return text.includes(normalizedTerm);
+  }
+
+  const ESPORTS_ENTITIES = [
+    ...((global.OW_ESPORTS_DB?.teams || []).map((team) => ({
+      terms: [team.name, ...(team.aliases || [])], targets: [`esports-team-${team.id}`]
+    }))),
+    ...((global.OW_ESPORTS_DB?.players || []).map((player) => ({
+      terms: [player.name, player.real, ...(player.aliases || [])].filter(Boolean),
+      targets: [`esports-player-${player.id}`, `pro-player-${player.id}`]
+    })))
+  ];
+
+  function matchedEsportsTargets(query) {
+    const text = normalize(query);
+    return ESPORTS_ENTITIES.filter((entity) => entity.terms.some((term) => containsTerm(text, term))).flatMap((entity) => entity.targets);
+  }
+
   function hashToken(token) {
     let hash = 2166136261;
     for (let i = 0; i < token.length; i += 1) {
@@ -134,19 +159,24 @@
     search(query, options = {}) {
       const queryTokens = tokenize(query);
       const queryVector = this.vectorize(queryTokens);
+      const normalizedQuery = normalize(query);
+      const esportsTargets = new Set(matchedEsportsTargets(query));
       const requestedCategory = options.category && options.category !== "fallback" ? options.category : null;
       const currentOnly = Boolean(options.currentOnly);
       const scores = this.documents.map((doc, index) => {
         const bm25 = this.bm25(queryTokens, index);
         const vector = this.cosine(queryVector, index);
-        const phrase = doc.keywords.reduce((sum, keyword) => normalize(query).includes(normalize(keyword)) ? sum + Math.min(5, normalize(keyword).length) : sum, 0);
+        const phrase = doc.keywords.reduce((sum, keyword) => containsTerm(normalizedQuery, keyword) ? sum + Math.min(5, normalize(keyword).length) : sum, 0);
         const categoryBoost = requestedCategory && doc.metadata.category === requestedCategory ? 2.4 : 0;
+        const entityBoost = esportsTargets.has(doc.id) ? 6.5 : 0;
+        const intentBoost = /世界杯/.test(normalizedQuery) && ["owwc", "owwc-2026-format"].includes(doc.id) ? 12
+          : /集火/.test(normalizedQuery) && /掉点/.test(normalizedQuery) && doc.id === "terms" ? 4.5 : 0;
         const sourceBoost = doc.metadata.sourceType === "official" ? 0.25 : 0;
         const freshnessBoost = currentOnly
           ? (doc.metadata.version === "current-snapshot" ? 1.1 : doc.metadata.version === "historical" ? -0.65 : 0)
           : 0;
-        const combined = bm25 * 0.62 + vector * 7.5 * 0.28 + phrase * 0.1 + categoryBoost + sourceBoost + freshnessBoost;
-        return { doc, score: combined, bm25, vector, phrase, categoryBoost };
+        const combined = bm25 * 0.62 + vector * 7.5 * 0.28 + phrase * 0.1 + categoryBoost + entityBoost + intentBoost + sourceBoost + freshnessBoost;
+        return { doc, score: combined, bm25, vector, phrase, categoryBoost, entityBoost, intentBoost };
       }).filter(Boolean).sort((a, b) => b.score - a.score);
       const topK = Math.max(1, Math.min(8, options.topK || 5));
       return scores.slice(0, topK).map((result, rank) => ({
@@ -159,6 +189,7 @@
 
   function classify(query, categories) {
     const text = normalize(query);
+    if (matchedEsportsTargets(query).length) return { id: "esports", score: 140 };
     if (/(胜率|选取率|登场率|样本|数据).*(克制|英雄)|克制.*(胜率|选取率|数据)/.test(text)) return { id: "heroes", score: 120 };
     if (/(t位|c位|奶位|重装|输出|辅助).*(分别|负责什么|区别)/.test(text)) return { id: "basics", score: 120 };
     if (/bo\d|ft\d|单败|双败|胜者组|败者组/.test(text)) return { id: "esports", score: 120 };
