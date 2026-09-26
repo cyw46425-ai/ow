@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "last_reviewed": "2026-09-20",
+  "last_reviewed": "2026-09-26",
   "sources": [
     {
       "id": "blizzard-hero-rates",
@@ -61,8 +61,36 @@
       "update_policy": "manual_link_check_monthly",
       "required_metadata": ["creator", "published_at", "original_url", "verified_at"],
       "fallback": "hide_broken_link"
+    },
+    {
+      "id": "blizzard-hero-pages",
+      "name": "Blizzard official hero pages",
+      "url": "https://overwatch.blizzard.com/zh-tw/heroes/",
+      "content": ["hero_role", "hitpoints", "ability_name", "ability_effect"],
+      "authority": "official",
+      "update_policy": "sync_and_review_per_patch",
+      "required_metadata": ["hero", "locale", "verified_at"],
+      "fallback": "keep_mechanics_but_avoid_unverified_numbers"
+    },
+    {
+      "id": "overfast-api",
+      "name": "OverFast API",
+      "url": "https://overfast-api.tekrop.fr/",
+      "content": ["structured_copy_of_blizzard_hero_pages"],
+      "authority": "third_party_transport_of_official_source",
+      "update_policy": "manual_sync_with_source_diff_review",
+      "required_metadata": ["api_version", "locale", "verified_at", "official_source_url"],
+      "fallback": "link_to_blizzard_hero_page"
+    },
+    {
+      "id": "liquipedia-overwatch",
+      "name": "Liquipedia Overwatch",
+      "url": "https://liquipedia.net/overwatch/Main_Page",
+      "content": ["player_history", "roster", "tournament_archive"],
+      "authority": "community_maintained_esports_database",
+      "update_policy": "cross_check_with_official_schedule_before_claiming_current_status",
+      "required_metadata": ["page_updated_at", "verified_at", "official_cross_check"],
+      "fallback": "describe_historical_role_without_current_team_claim"
     }
   ]
 }
-
-

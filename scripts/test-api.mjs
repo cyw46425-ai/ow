@@ -12,7 +12,7 @@ assert.equal(missingKey.status, 503);
 const originalFetch = globalThis.fetch;
 globalThis.fetch = async () => new Response(JSON.stringify({
   model: "deepseek-chat",
-  choices: [{ message: { content: JSON.stringify({ conclusion: "先等队友集合。", why: "当前人数不足。", steps: ["撤回安全位置"], caveat: "加时需结合目标进度判断。", used_sources: ["S1", "S999"] }) } }],
+  choices: [{ message: { content: JSON.stringify({ conclusion: "主人，先等队友集合。", cited_knowledge: ["当前人数不足。", "撤回安全位置。"], related_questions: ["什么时候可以不等队友直接续点？", "如何判断队友是否已经复活？"], caveat: "加时需结合目标进度判断。", used_sources: ["S1", "S999"] }) } }],
   usage: { total_tokens: 42 }
 }), { status: 200, headers: { "Content-Type": "application/json" } });
 
@@ -21,11 +21,11 @@ try {
   assert.equal(response.status, 200);
   const payload = await response.json();
   assert.deepEqual(payload.answer.used_sources, ["S1"]);
-  assert.equal(payload.answer.conclusion, "先等队友集合。");
+  assert.equal(payload.answer.conclusion, "主人，先等队友集合。");
+  assert.deepEqual(payload.answer.cited_knowledge, ["当前人数不足。", "撤回安全位置。"]);
+  assert.equal(payload.answer.related_questions.length, 2);
 } finally {
   globalThis.fetch = originalFetch;
 }
 
 console.log("API gateway tests passed.");
-
-

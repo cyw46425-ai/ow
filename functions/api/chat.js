@@ -48,7 +48,7 @@ export async function onRequestPost({ request, env }) {
     content: cleanText(turn.content, 500)
   })) : [];
 
-  const system = `你是《守望先锋》新手决策助手。你必须只依据提供的检索资料回答，不得使用资料之外的具体数值、活动日期、赛果或版本改动。资料不足时明确说无法确认，并说明还需要什么信息。区分总体胜率、对位克制和玩家熟练度。动态信息必须提醒用户注意资料日期。输出合法 JSON，格式严格为：{"conclusion":"一句直接答案","why":"依据与解释","steps":["最多4条可执行建议"],"caveat":"限制、不确定性或需要补充的条件","used_sources":["S1","S2"]}。used_sources 只能填写真正支持答案的资料编号。`;
+  const system = `你的名字是“安娜”，是《守望先锋》新手决策助手，也是一名可靠、可爱的女仆情报官。语气亲切轻快，可以偶尔称呼用户“主人”，并在整段回答里最多一次于句尾加入“啾咪～”或简短颜文字（例如“(｡•̀ᴗ-)✧”）；不要每句卖萌，不要让人设干扰事实、风险提示和专业判断。如果用户问你是谁，明确回答“我是安娜，守望先锋女仆情报官”。你必须只依据提供的检索资料回答，不得使用资料之外的具体数值、活动日期、赛果或版本改动。资料不足时明确说无法确认，并说明还需要什么信息。区分总体胜率、对位克制和玩家熟练度。动态信息必须提醒用户注意资料日期。回答结构必须依次为“结论、引用的知识、联想出来的其他问题”。输出合法 JSON，格式严格为：{"conclusion":"一句直接答案，保持可爱但专业","cited_knowledge":["1至4条真正支撑结论的知识与可执行建议"],"related_questions":["2至3个用户接下来可能想问的问题"],"caveat":"限制、不确定性或需要补充的条件","used_sources":["S1","S2"]}。related_questions 必须是问句；used_sources 只能填写真正支持答案的资料编号。`;
   const evidence = context.map((item) => `[${item.source_id}] ${item.title}\n类别：${item.category}；版本：${item.version}；截至：${item.as_of}；来源类型：${item.source_type}\n${item.content}`).join("\n\n");
   const user = `用户问题：${query}\n\n检索资料：\n${evidence}\n\n请根据资料输出 JSON。`;
 
@@ -84,8 +84,8 @@ export async function onRequestPost({ request, env }) {
     const allowedSources = new Set(context.map((item) => item.source_id));
     answer = {
       conclusion: cleanText(answer.conclusion, 600),
-      why: cleanText(answer.why, 1200),
-      steps: Array.isArray(answer.steps) ? answer.steps.slice(0, 4).map((step) => cleanText(step, 320)) : [],
+      cited_knowledge: Array.isArray(answer.cited_knowledge) ? answer.cited_knowledge.slice(0, 4).map((item) => cleanText(item, 420)) : [],
+      related_questions: Array.isArray(answer.related_questions) ? answer.related_questions.slice(0, 3).map((item) => cleanText(item, 180)) : [],
       caveat: cleanText(answer.caveat, 600),
       used_sources: Array.isArray(answer.used_sources) ? answer.used_sources.filter((id) => allowedSources.has(id)).slice(0, 6) : []
     };
@@ -100,5 +100,3 @@ export async function onRequestPost({ request, env }) {
 export function onRequest() {
   return json({ error: "method_not_allowed" }, 405);
 }
-
-

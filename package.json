@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Hybrid RAG Overwatch rookie decision assistant",
   "scripts": {
-    "build": "node build.mjs",
+    "build": "node scripts/build-static.mjs",
     "evaluate": "node scripts/evaluate-rag.mjs",
     "test": "npm run build && npm run evaluate && node scripts/test-api.mjs"
   }

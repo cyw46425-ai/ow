@@ -1,0 +1,1940 @@
+{
+  "schemaVersion": "1.0",
+  "locale": "zh-tw",
+  "verifiedAt": "2026-09-26",
+  "source": "Blizzard hero pages via OverFast API 4.11.0",
+  "heroes": [
+    {
+      "id": "ana",
+      "key": "ana",
+      "name": "安娜",
+      "localizedName": "安娜",
+      "aliases": [],
+      "role": "支援",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "生化步枪",
+          "description": "长程步枪，能治疗队友以及伤害敌人  按住进行狙击"
+        },
+        {
+          "name": "睡眠镖",
+          "description": "发射飞镖，使一名敌人陷入昏睡"
+        },
+        {
+          "name": "生化手榴弹",
+          "description": "投掷手榴弹，能治疗队友并且提高他们受到的治疗效果，同时能伤害敌人并且使他们无法接受治疗"
+        },
+        {
+          "name": "奈米强化",
+          "description": "提高目标的伤害，并且降低该目标所受到的伤害"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/ana/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "anran",
+      "key": "anran",
+      "name": "安燃",
+      "localizedName": "安燃",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "朱雀扇",
+          "description": "挥扇以射出烈焰"
+        },
+        {
+          "name": "搧风点火",
+          "description": "爆发热气，强化燃烧伤害"
+        },
+        {
+          "name": "烈焰跃舞",
+          "description": "避开所有伤害，同时攻击附近的敌人，每命中一个敌人就能恢复生命值"
+        },
+        {
+          "name": "炼狱冲刺",
+          "description": "向前推进，对击中的敌人造成伤害"
+        },
+        {
+          "name": "朱羽翔天",
+          "description": "向前冲刺，击中目标时会爆炸并立即点燃敌人"
+        },
+        {
+          "name": "朱羽重生",
+          "description": "死亡时，从烈焰爆炸中复活重生"
+        },
+        {
+          "name": "点燃",
+          "description": "火攻命中敌人会使其燃烧"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/anran/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "ashe",
+      "key": "ashe",
+      "name": "艾什",
+      "localizedName": "艾西",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "毒蛇",
+          "description": "半自动步枪  按住进行狙击，可提高伤害与准确度，但同时降低射击速度"
+        },
+        {
+          "name": "双管散弹枪",
+          "description": "开枪射击前方的敌人，同时击退自己"
+        },
+        {
+          "name": "炸药",
+          "description": "扔出炸药。炸药会在一小段时间後爆炸，或者可以藉由射击来引爆炸药"
+        },
+        {
+          "name": "鲍伯",
+          "description": "叫出鲍伯。他会向前冲锋，并且将敌人击飞至空中，再发射手炮攻击敌人"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/ashe/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "baptiste",
+      "key": "baptiste",
+      "name": "巴蒂斯特",
+      "localizedName": "巴帝斯特",
+      "aliases": [
+        "巴蒂"
+      ],
+      "role": "支援",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "生化发射器",
+          "description": "三发点放型枪械  投掷医疗弹，可治疗落点附近的所有队友"
+        },
+        {
+          "name": "癒伤波动",
+          "description": "启动後会立刻治疗自己与附近盟友，并持续获得额外治疗。对生命值低於一半的目标，立即治疗效果加倍"
+        },
+        {
+          "name": "维生力场",
+          "description": "抛出一个能防止队友死亡的装置。敌人可破坏此装置"
+        },
+        {
+          "name": "增幅矩阵",
+          "description": "投射出一个会产生力场的矩阵，可使队友发射的伤害与治疗量加倍"
+        },
+        {
+          "name": "机动长靴",
+          "description": "按住蹲下可跳得更高"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/baptiste/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "bastion",
+      "key": "bastion",
+      "name": "堡垒",
+      "localizedName": "壁垒机兵",
+      "aliases": [],
+      "role": "输出",
+      "health": 350,
+      "armor": 100,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "突击模式",
+          "description": "移动缓慢，配有火力强大的旋转机枪"
+        },
+        {
+          "name": "机动模式",
+          "description": "具有机动性，配有高精度轻型武器"
+        },
+        {
+          "name": "A-36战术榴弹",
+          "description": "发射炸药，撞到墙壁会反弹，撞到敌人或地面时才会爆炸"
+        },
+        {
+          "name": "切换模式",
+          "description": "切换不同的武装型态"
+        },
+        {
+          "name": "火炮模式",
+          "description": "无法移动，但是最多能发射3发威力强大的炮弹"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/bastion/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "brigitte",
+      "key": "brigitte",
+      "name": "布丽吉塔",
+      "localizedName": "碧姬",
+      "aliases": [
+        "锤妹"
+      ],
+      "role": "支援",
+      "health": 250,
+      "armor": 50,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "火箭连枷",
+          "description": "具有较远攻击距离的近战武器"
+        },
+        {
+          "name": "修复包",
+          "description": "为一名队友治疗一小段时间"
+        },
+        {
+          "name": "惩击",
+          "description": "向前甩出连枷，击退命中的敌人"
+        },
+        {
+          "name": "屏障防盾",
+          "description": "按住在前方产生能量屏障"
+        },
+        {
+          "name": "持盾冲锋",
+          "description": "可於启动屏障防盾时施放。向前冲撞并击退一名敌人"
+        },
+        {
+          "name": "全军集结",
+          "description": "获得装甲、强化屏障防盾，并且为附近队友提供额外生命值"
+        },
+        {
+          "name": "激励",
+          "description": "以连枷命中敌人，可治疗附近队友"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/brigitte/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "cassidy",
+      "key": "cassidy",
+      "name": "卡西迪",
+      "localizedName": "卡西迪",
+      "aliases": [
+        "麦克雷",
+        "牛仔"
+      ],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "和平扞卫者",
+          "description": "精准致命的左轮手枪  将剩下子弹全数射出"
+        },
+        {
+          "name": "战术翻滚",
+          "description": "朝你移动的方向翻滚，能降低受到的伤害，同时装填子弹"
+        },
+        {
+          "name": "弹无虚发",
+          "description": "与敌人对峙，按Q锁定目标，再按Q或技能3开枪"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/cassidy/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "dmon",
+      "key": "dmon",
+      "name": "D.Mon",
+      "localizedName": "D.Mon",
+      "aliases": [],
+      "role": "重装",
+      "health": 650,
+      "armor": 325,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "电浆光剑 ",
+          "description": "快速能量近战武器"
+        },
+        {
+          "name": "便携型热核连射炮",
+          "description": "重型机枪"
+        },
+        {
+          "name": "能量屏障",
+          "description": "按住在前方产生能量屏障"
+        },
+        {
+          "name": "冲刺打击",
+          "description": "部署能量屏障时，向前攻击即可造成伤害并击退敌人"
+        },
+        {
+          "name": "热核连射炮",
+          "description": "启动速射机枪"
+        },
+        {
+          "name": "推进器",
+          "description": "消耗燃料并向任何水平方向冲刺"
+        },
+        {
+          "name": "紧急逃生！",
+          "description": "机甲被毁灭时，弹射脱离"
+        },
+        {
+          "name": "突破极限",
+          "description": "释放横扫斩击，自己获得超量治疗，同时强化敌人受到的伤害"
+        },
+        {
+          "name": "空投机甲",
+          "description": "重新组装机甲"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/dmon/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "domina",
+      "key": "domina",
+      "name": "金驭",
+      "localizedName": "多米娜",
+      "aliases": [],
+      "role": "重装",
+      "health": 650,
+      "armor": 0,
+      "shields": 400,
+      "abilities": [
+        {
+          "name": "光子麦格农",
+          "description": "中距离光束，持续使用後会发射高强度射击"
+        },
+        {
+          "name": "屏障阵列",
+          "description": "产生分段的屏障"
+        },
+        {
+          "name": "音波反斥器",
+          "description": "将敌人推开，敌人撞上墙壁时会昏迷"
+        },
+        {
+          "name": "晶体炸弹",
+          "description": "投射一颗爆炸晶体，重新启动即可引爆"
+        },
+        {
+          "name": "全景光牢",
+          "description": "发射一道硬化光粒屏障，囚禁敌人并在时间结束後爆炸"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/domina/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "doomfist",
+      "key": "doomfist",
+      "name": "末日铁拳",
+      "localizedName": "毁灭拳王",
+      "aliases": [
+        "铁拳"
+      ],
+      "role": "重装",
+      "health": 525,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "散弹手炮",
+          "description": "会自动装填的近距离散射武器"
+        },
+        {
+          "name": "火箭拳",
+          "description": "按住可蓄力，放开时会向前冲，击退撞到的敌人。敌人撞到墙壁等障碍物时，受到的伤害更大"
+        },
+        {
+          "name": "震地袭",
+          "description": "跳跃，然後猛击地面"
+        },
+        {
+          "name": "强力格挡",
+          "description": "保护自己不受前方攻击伤害。格挡大量伤害时会使火箭拳充能"
+        },
+        {
+          "name": "流星坠",
+          "description": "按下Q会跳到空中。指定落下的地点後，按下技能3就会攻击目标区域"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/doomfist/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "dva",
+      "key": "dva",
+      "name": "D.Va",
+      "localizedName": "D.Va",
+      "aliases": [
+        "迪瓦",
+        "宋哈娜"
+      ],
+      "role": "重装",
+      "health": 650,
+      "armor": 325,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "热核炮",
+          "description": "近距离散射自动武器"
+        },
+        {
+          "name": "光线枪",
+          "description": "自动武器"
+        },
+        {
+          "name": "喷射推进",
+          "description": "朝你面对的方向飞行"
+        },
+        {
+          "name": "防护力场",
+          "description": "能挡住你面前的子弹"
+        },
+        {
+          "name": "火箭匣舱",
+          "description": "发射数枚火箭"
+        },
+        {
+          "name": "自爆",
+          "description": "按下超载开关并弹射脱离，随後机甲则会爆炸"
+        },
+        {
+          "name": "空投机甲",
+          "description": "呼叫一台新的机甲"
+        },
+        {
+          "name": "紧急逃生！",
+          "description": "机甲被毁灭时，弹射脱离"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/dva/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "echo",
+      "key": "echo",
+      "name": "回声",
+      "localizedName": "回音",
+      "aliases": [],
+      "role": "输出",
+      "health": 225,
+      "armor": 0,
+      "shields": 75,
+      "abilities": [
+        {
+          "name": "三连射",
+          "description": "朝三角形的位置一次发射3发攻击"
+        },
+        {
+          "name": "黏性炸弹",
+          "description": "发射一连串黏性炸弹，短暂延迟後爆炸"
+        },
+        {
+          "name": "飞空",
+          "description": "迅速向前飞行，然後可在短时间内自由飞行"
+        },
+        {
+          "name": "聚能光束",
+          "description": "引导一道光束几秒，对生命值50%以下的目标额外造成极大伤害"
+        },
+        {
+          "name": "复制",
+          "description": "变成目标英雄的复制体。持续时间内，目标无法更换英雄"
+        },
+        {
+          "name": "滑翔",
+          "description": "按住跳跃键可在坠落时滑翔"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/echo/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "emre",
+      "key": "emre",
+      "name": "埃姆雷",
+      "localizedName": "伊默",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "合成爆发步枪",
+          "description": "三发点放型武器  按住以狙击瞄准，提高准确度和威力衰减距离"
+        },
+        {
+          "name": "生化手榴弹",
+          "description": "丢出一颗在弹跳不久後会爆炸的手榴弹"
+        },
+        {
+          "name": "覆写协定",
+          "description": "覆写程式启动，将你变成活体武器"
+        },
+        {
+          "name": "改造命脉",
+          "description": "生命值再生被动技能会更快触发，触发时立即恢复30点生命值"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/emre/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "freja",
+      "key": "freja",
+      "name": "弗蕾娅",
+      "localizedName": "弗蕾亚",
+      "aliases": [],
+      "role": "输出",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "缚锤射击",
+          "description": "射出爆炸缚锤。命中会绑住敌人并拉近其他附近的敌人"
+        },
+        {
+          "name": "快速冲刺",
+          "description": "朝你移动的方向跳跃，同时重置精确瞄准"
+        },
+        {
+          "name": "精确瞄准",
+          "description": "降低你的移动速度，以高速爆炸箭矢瞄准敌人。使用快速冲刺可重置精确瞄准"
+        },
+        {
+          "name": "上升气流",
+          "description": "乘着一阵风向上飞升"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/freja/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "genji",
+      "key": "genji",
+      "name": "源氏",
+      "localizedName": "源氏",
+      "aliases": [
+        "源"
+      ],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "手里剑",
+          "description": "精准射出三枚手里剑  朝弧型范围射出三枚手里剑"
+        },
+        {
+          "name": "招架",
+          "description": "挡开来自前方的投射武器，并且格挡近战攻击"
+        },
+        {
+          "name": "迅影袭",
+          "description": "向前冲刺斩击造成伤害，击杀敌人时重置冷却时间"
+        },
+        {
+          "name": "龙一文字",
+          "description": "解除致命近战武器的封印"
+        },
+        {
+          "name": "生化速捷",
+          "description": "能攀爬墙壁及二连跳"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/genji/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "hanzo",
+      "key": "hanzo",
+      "name": "半藏",
+      "localizedName": "半藏",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "暴风弓",
+          "description": "按住左键，拉满弓可射得更远"
+        },
+        {
+          "name": "暴风箭",
+          "description": "接下来5发弹射箭矢可以立即射出，但伤害降低"
+        },
+        {
+          "name": "音波箭",
+          "description": "命中後可暂时显示敌人位置"
+        },
+        {
+          "name": "突进跳跃",
+          "description": "二连跳"
+        },
+        {
+          "name": "龙魂击",
+          "description": "以龙魂吞噬路径上的敌人"
+        },
+        {
+          "name": "飞檐走壁",
+          "description": "跳到墙壁後可於壁面攀爬"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/hanzo/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "hazard",
+      "key": "hazard",
+      "name": "骇灾",
+      "localizedName": "灾害",
+      "aliases": [],
+      "role": "重装",
+      "health": 650,
+      "armor": 225,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "骨刺",
+          "description": "发射一波尖刺"
+        },
+        {
+          "name": "尖刺防御",
+          "description": "保护自己不受前方攻击伤害，向附近敌人发射追踪尖刺，并恢复子弹"
+        },
+        {
+          "name": "猛跃",
+          "description": "向前跳跃。再次启动即可劈砍并击退敌人"
+        },
+        {
+          "name": "锯齿墙",
+          "description": "发射一堵布满尖刺的墙，可伤害并击退附近敌人"
+        },
+        {
+          "name": "狂暴针雨",
+          "description": "降下大量尖刺，使敌人无法移动"
+        },
+        {
+          "name": "攀墙",
+          "description": "攀爬矮墙并抓紧边缘"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/hazard/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "illari",
+      "key": "illari",
+      "name": "伊拉锐",
+      "localizedName": "伊拉里",
+      "aliases": [],
+      "role": "支援",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "太阳步枪",
+          "description": "远距离自动充能步枪  消耗太阳能量的中距离治疗光束"
+        },
+        {
+          "name": "万千烈阳",
+          "description": "发射凝聚成一团的强大太阳能量，命中的敌人会遭缓速，且受到一定伤害後会爆炸"
+        },
+        {
+          "name": "治疗塔",
+          "description": "架设一座能治疗友军的治疗塔"
+        },
+        {
+          "name": "爆发",
+          "description": "朝你移动的方向腾起并击退敌人，按住跳跃便可跳更高"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/illari/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "jetpackcat",
+      "key": "jetpack-cat",
+      "name": "飞天猫",
+      "localizedName": "火箭猫",
+      "aliases": [],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "生化肉球枪",
+          "description": "中距离扩散抛射物，能治疗队友以及伤害敌人"
+        },
+        {
+          "name": "狂飙飞猫",
+          "description": "往你移动的方向加速。承载另一名玩家时，燃料恢复速度会减缓"
+        },
+        {
+          "name": "救生索",
+          "description": "切换为载运模式，可拖曳一名队友。提高移动速度并治疗该队友"
+        },
+        {
+          "name": "呼噜",
+          "description": "范围型脉冲治疗，会逐渐提高频率。启动时击退附近敌人"
+        },
+        {
+          "name": "猫的绑架",
+          "description": "冲向地面位置，击倒敌人并连结至最近的敌人"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/jetpack-cat/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "junkerqueen",
+      "key": "junker-queen",
+      "name": "渣客女王",
+      "localizedName": "垃圾镇女王",
+      "aliases": [],
+      "role": "重装",
+      "health": 525,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "散弹枪",
+          "description": "泵动式散弹枪"
+        },
+        {
+          "name": "统率怒号",
+          "description": "暂时提高自己和盟友的生命值和移动速度"
+        },
+        {
+          "name": "屠杀",
+          "description": "对前方所有敌人造成创伤，使其受到持续伤害。每击中一个敌人都能降低冷却时间"
+        },
+        {
+          "name": "疯狂杀戮",
+          "description": "向前冲刺，对敌人造成创伤，使其受到持续伤害并且无法获得治疗"
+        },
+        {
+          "name": "肾上腺素爆发",
+          "description": "创伤造成的持续伤害会为你恢复生命值"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/junker-queen/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "junkrat",
+      "key": "junkrat",
+      "name": "狂鼠",
+      "localizedName": "炸弹鼠",
+      "aliases": [
+        "老鼠"
+      ],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "爆弹枪",
+          "description": "射出弹跳爆裂物的武器"
+        },
+        {
+          "name": "震荡地雷",
+          "description": "按左Shift丢出地雷，然後再按技能1来引爆并且震飞目标"
+        },
+        {
+          "name": "钢铁陷阱",
+          "description": "放置让敌人无法移动的陷阱"
+        },
+        {
+          "name": "地狱飞轮",
+          "description": "丢出一个可遥控的轮胎炸弹"
+        },
+        {
+          "name": "同归於尽",
+          "description": "炸弹不会对自己造成伤害，会在死亡时掉落炸弹"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/junkrat/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "juno",
+      "key": "juno",
+      "name": "朱诺",
+      "localizedName": "朱诺",
+      "aliases": [],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 150,
+      "abilities": [
+        {
+          "name": "医疗光枪",
+          "description": "点放武器，能治疗队友以及伤害敌人"
+        },
+        {
+          "name": "脉冲星鱼雷",
+          "description": "按下锁定，再按下次要攻击发射自动导向抛射物。持续性治疗队友并对敌人造成伤害"
+        },
+        {
+          "name": "轨道射线",
+          "description": "召唤一道会向前推进的射线，治疗队友并提高他们的伤害"
+        },
+        {
+          "name": "超能圆环",
+          "description": "部署一个圆环，队友穿过时能提高其移动速度"
+        },
+        {
+          "name": "滑翔加速",
+          "description": "水平滑翔时移动速度提高"
+        },
+        {
+          "name": "火星喷射靴",
+          "description": "在空中时，按下空白键进行二连跳，按住空白键能滞空"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/juno/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "kiriko",
+      "key": "kiriko",
+      "name": "雾子",
+      "localizedName": "雾子",
+      "aliases": [],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "治疗御札",
+          "description": "导引一道可以追踪目标盟友的治疗护符"
+        },
+        {
+          "name": "苦无",
+          "description": "远距离投掷武器"
+        },
+        {
+          "name": "瞬影步",
+          "description": "直接传送到一名盟友身边"
+        },
+        {
+          "name": "祓除铃",
+          "description": "投掷一个保护符，使盟友暂时进入无敌状态，并且净化大部分的负面效果"
+        },
+        {
+          "name": "御狐冲刺",
+          "description": "召唤一只向前冲刺的灵狐，盟友走在灵狐路径上的时候会加快移动、攻击速度和缩短冷却时间"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/kiriko/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "lifeweaver",
+      "key": "lifeweaver",
+      "name": "生命之梭",
+      "localizedName": "织命",
+      "aliases": [
+        "花男"
+      ],
+      "role": "支援",
+      "health": 250,
+      "armor": 0,
+      "shields": 50,
+      "abilities": [
+        {
+          "name": "治疗绽放",
+          "description": "按住来累积治疗爆发，释放能治疗一个目标盟友 未使用时，会以较慢的速度被动累积能量"
+        },
+        {
+          "name": "荆棘箭雨",
+          "description": "快速发射成对的抛射物"
+        },
+        {
+          "name": "花瓣平台",
+          "description": "投掷一个踩上去会向上升起的平台。未使用时会重置"
+        },
+        {
+          "name": "恢复冲刺",
+          "description": "往你的移动方向冲刺，并对自己造成少量治疗效果"
+        },
+        {
+          "name": "赋生之握",
+          "description": "将盟友拉向你的位置，在他们移动的同时保护对方"
+        },
+        {
+          "name": "生命之树",
+          "description": "种植一棵在发芽时会立即治疗盟友的树，并在持续期间内定期造成治疗效果"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/lifeweaver/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "lucio",
+      "key": "lucio",
+      "name": "卢西奥",
+      "localizedName": "路西欧",
+      "aliases": [
+        "DJ"
+      ],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "音波枪",
+          "description": "音波发射器"
+        },
+        {
+          "name": "切换曲目",
+          "description": "可切换两首不同歌曲。治疗能恢复附近队友生命值，加速能使附近队友跑得更快"
+        },
+        {
+          "name": "音量全开",
+          "description": "提高目前歌曲的效果"
+        },
+        {
+          "name": "音浪冲击",
+          "description": "产生短程冲击波击退敌人"
+        },
+        {
+          "name": "音波屏障",
+          "description": "为附近队友提供暂时性的额外生命值"
+        },
+        {
+          "name": "壁面疾走",
+          "description": "可在墙壁上移动"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/lucio/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "mauga",
+      "key": "mauga",
+      "name": "毛加",
+      "localizedName": "莫加",
+      "aliases": [],
+      "role": "重装",
+      "health": 725,
+      "armor": 150,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "暴走",
+          "description": "向前冲锋、重踏地面并击飞敌人。你在冲锋期间无法被阻挡"
+        },
+        {
+          "name": "心率超载",
+          "description": "获得伤害减免，附近队友造成伤害时会恢复生命值"
+        },
+        {
+          "name": "狂暴",
+          "description": "造成爆击伤害时获得暂时生命值"
+        },
+        {
+          "name": "铁笼战",
+          "description": "部署一道屏障，把你和敌人关在一起"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/mauga/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "mei",
+      "key": "mei",
+      "name": "美",
+      "localizedName": "小美",
+      "aliases": [
+        "小美"
+      ],
+      "role": "输出",
+      "health": 300,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "冷冻枪",
+          "description": "能使敌人缓速的短程喷洒型武器  发射冰刺的远距离武器"
+        },
+        {
+          "name": "冰霜屏障",
+          "description": "进入无敌状态，并且为自己恢复生命值"
+        },
+        {
+          "name": "冰墙",
+          "description": "在你面前产生一道冰墙"
+        },
+        {
+          "name": "暴风雪",
+          "description": "抛出气象控制仪，使大范围的敌人冻结"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/mei/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "mercy",
+      "key": "mercy",
+      "name": "天使",
+      "localizedName": "慈悲",
+      "aliases": [
+        "天使姐姐"
+      ],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "天使之杖",
+          "description": "按住可持续治疗队友  按住可提高队友造成的伤害"
+        },
+        {
+          "name": "天使光枪",
+          "description": "自动武器"
+        },
+        {
+          "name": "守护天使",
+          "description": "飞向一名队友。在飞行时，跳跃会让你向前移动，蹲下会让你向上移动"
+        },
+        {
+          "name": "复活",
+          "description": "复活一名阵亡的队友"
+        },
+        {
+          "name": "天使缓降",
+          "description": "延缓坠落速度"
+        },
+        {
+          "name": "女武神",
+          "description": "获得飞行能力，同时强化自身技能"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/mercy/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "mizuki",
+      "key": "mizuki",
+      "name": "瑞希",
+      "localizedName": "瑞稀",
+      "aliases": [],
+      "role": "支援",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "灵魂旋刃",
+          "description": "弹跳型抛射物，可对敌人造成伤害"
+        },
+        {
+          "name": "治癒之笠",
+          "description": "掷出笠帽，在队友间弹跳治疗队友"
+        },
+        {
+          "name": "束缚锁链",
+          "description": "朝敌人射出锁链，阻碍对方的移动"
+        },
+        {
+          "name": "形代归返",
+          "description": "向前跳跃，提高移动速度。重新启动会传送回原本位置"
+        },
+        {
+          "name": "结界护佑",
+          "description": "建立结界护佑，治疗在结界内的队友，吸收穿过结界的敌方抛射物"
+        },
+        {
+          "name": "癒疗灵气",
+          "description": "治疗邻近队友。造成伤害和治疗会提高效果"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/mizuki/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "moira",
+      "key": "moira",
+      "name": "莫伊拉",
+      "localizedName": "莫伊拉",
+      "aliases": [
+        "莫姨"
+      ],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "生化移转之手",
+          "description": "按住可治疗你面前所有队友，会消耗生化能量  长程光束武器，将伤害转化为你的生命值，并且恢复你的生化能量"
+        },
+        {
+          "name": "生化球",
+          "description": "发射会弹跳的球体，能用来治疗附近的队友或是伤害附近的敌人"
+        },
+        {
+          "name": "消失",
+          "description": "消失并且提高移动速度，立即进入无敌状态，不过这段时间无法攻击"
+        },
+        {
+          "name": "聚合光束",
+          "description": "发射可以治疗队友、伤害敌人的光束"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/moira/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "orisa",
+      "key": "orisa",
+      "name": "奥丽莎",
+      "localizedName": "欧瑞莎",
+      "aliases": [],
+      "role": "重装",
+      "health": 600,
+      "armor": 300,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "强化核融炮",
+          "description": "热能自动武器"
+        },
+        {
+          "name": "能量标枪",
+          "description": "朝敌人发射标枪，可击昏并击退敌人。若敌人撞上墙壁，可加强效果"
+        },
+        {
+          "name": "强化防御",
+          "description": "暂时获得生命值，降低受到的所有伤害，并且免疫控场效果"
+        },
+        {
+          "name": "回旋标枪",
+          "description": "旋转标枪，摧毁远程抛射物并格挡近战攻击，同时推开敌人，并且提高向前移动的速度"
+        },
+        {
+          "name": "大地涌能",
+          "description": "把敌人拉向自己并将自己固定在原地，获得强化防御效果并开始进行伤害充能。使用Q以提早释放能量"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/orisa/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "pharah",
+      "key": "pharah",
+      "name": "法老之鹰",
+      "localizedName": "法拉",
+      "aliases": [
+        "法鸡"
+      ],
+      "role": "输出",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "火箭发射器",
+          "description": "长程火箭发射器"
+        },
+        {
+          "name": "喷射冲刺",
+          "description": "水平推进"
+        },
+        {
+          "name": "跳跃喷射",
+          "description": "快速向上飞行，获得些许燃料"
+        },
+        {
+          "name": "震荡爆破",
+          "description": "以腕部火箭来震退敌人"
+        },
+        {
+          "name": "火箭弹幕",
+          "description": "持续射出小型火箭"
+        },
+        {
+          "name": "滞空",
+          "description": "按住以滞空。燃料用尽後会缓缓下降。只有在地面上时才会恢复燃料"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/pharah/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "ramattra",
+      "key": "ramattra",
+      "name": "拉玛刹",
+      "localizedName": "拉玛塔",
+      "aliases": [],
+      "role": "重装",
+      "health": 525,
+      "armor": 100,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "虚空加速器（智械形态）",
+          "description": "发射一连串抛射物"
+        },
+        {
+          "name": "虚空屏障（智械形态）",
+          "description": "於目标地点生成一道屏障"
+        },
+        {
+          "name": "重拳（复仇形态）",
+          "description": "出拳，每打出一拳都会生成一道穿透的能量波"
+        },
+        {
+          "name": "贪婪漩涡",
+          "description": "发射一颗能量球体，於触地後引爆，使敌人缓速并将其往下拉。重新启动技能可提早引爆球体"
+        },
+        {
+          "name": "歼灭",
+          "description": "进入复仇形态并生成一道致命的能量风暴。这道风暴会袭向附近敌人，只要对敌人造成伤害，风暴就会持续"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/ramattra/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "reaper",
+      "key": "reaper",
+      "name": "死神",
+      "localizedName": "死神",
+      "aliases": [],
+      "role": "输出",
+      "health": 300,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "狱焰散弹枪",
+          "description": "近距离散射武器"
+        },
+        {
+          "name": "幽影传送",
+          "description": "可传送到指定地点"
+        },
+        {
+          "name": "亡灵形态",
+          "description": "进入无敌状态，加快移动速度，但是无法攻击"
+        },
+        {
+          "name": "死亡绽放",
+          "description": "对附近所有敌人造成伤害"
+        },
+        {
+          "name": "夺魂",
+          "description": "造成伤害时会治疗自己"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/reaper/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "reinhardt",
+      "key": "reinhardt",
+      "name": "莱因哈特",
+      "localizedName": "莱因哈特",
+      "aliases": [
+        "大锤",
+        "莱茵哈特"
+      ],
+      "role": "重装",
+      "health": 700,
+      "armor": 300,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "火箭鎚",
+          "description": "威力强大的近战武器"
+        },
+        {
+          "name": "冲锋",
+          "description": "向前冲锋并将敌人撞到墙上"
+        },
+        {
+          "name": "烈焰击",
+          "description": "发射燃烧的冲击波"
+        },
+        {
+          "name": "屏障力场",
+          "description": "按住在前方产生能量屏障"
+        },
+        {
+          "name": "地裂击",
+          "description": "震倒前方所有敌人"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/reinhardt/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "roadhog",
+      "key": "roadhog",
+      "name": "路霸",
+      "localizedName": "拦路猪",
+      "aliases": [
+        "猪"
+      ],
+      "role": "重装",
+      "health": 750,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "废铁枪",
+          "description": "近距离散射武器  中距离抛射物，会在一定距离後转变为武器的近距离主要攻击"
+        },
+        {
+          "name": "锁链钩",
+          "description": "把一名敌人拉向你"
+        },
+        {
+          "name": "吸了再上",
+          "description": "恢复你的生命值，并且降低受到的伤害"
+        },
+        {
+          "name": "火力全开",
+          "description": "对你面前的敌人造成伤害并且将其击退"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/roadhog/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "shion",
+      "key": "shion",
+      "name": "死怨",
+      "localizedName": "死怨",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "牙罗双枪",
+          "description": "快速射击御魂手枪"
+        },
+        {
+          "name": "处刑",
+          "description": "发射X形弹幕。按住可以缩小扩散"
+        },
+        {
+          "name": "兜风",
+          "description": "发动引擎。重新启动即可下车并向前发射机车"
+        },
+        {
+          "name": "闪避",
+          "description": "冲刺并短暂获得超量治疗"
+        },
+        {
+          "name": "杀戮盛宴",
+          "description": "向前冲刺3次并发射大量枪弹"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/shion/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "sierra",
+      "key": "sierra",
+      "name": "西拉",
+      "localizedName": "席艾拉",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "螺旋步枪",
+          "description": "自动突击武器。射出子弹的轨迹呈螺旋状，持续开火会提高准确度"
+        },
+        {
+          "name": "追踪射击",
+          "description": "标记一名敌人。螺旋步枪的射击会自动追踪被标记的敌人"
+        },
+        {
+          "name": "震颤炸弹",
+          "description": "投掷一枚炸弹，击中时会产生一道冲击波"
+        },
+        {
+          "name": "定锚无人机",
+          "description": "发射定锚无人机。重新启动技能会射出钩索并弹向无人机"
+        },
+        {
+          "name": "开拓者",
+          "description": "部署一架会向前飞行并投下炸弹的无人机"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/sierra/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "sigma",
+      "key": "sigma",
+      "name": "西格玛",
+      "localizedName": "席格马",
+      "aliases": [],
+      "role": "重装",
+      "health": 625,
+      "armor": 0,
+      "shields": 275,
+      "abilities": [
+        {
+          "name": "超维球体",
+          "description": "发射两枚重力炸弹，在一小段时间之後引发内爆，造成范围伤害"
+        },
+        {
+          "name": "动能转化",
+          "description": "吸收面前的抛射物，转化为额外生命值"
+        },
+        {
+          "name": "重力崩引",
+          "description": "聚集大量碎块，接着把碎块扔向一名敌人，将其击倒在地"
+        },
+        {
+          "name": "实验屏障",
+          "description": "按住以驱动一道漂浮的屏障，放开则会放置屏障。再按一次技能会召回屏障"
+        },
+        {
+          "name": "重力流",
+          "description": "操纵重力，把敌人升至空中，再把他们摔到地面"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/sigma/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "sojourn",
+      "key": "sojourn",
+      "name": "索杰恩",
+      "localizedName": "索洁恩",
+      "aliases": [],
+      "role": "输出",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "磁轨枪",
+          "description": "进行快速连射，命中敌人时会产生能量  消耗储存的能量，射出具有强大冲击力并可穿透敌人的弹体"
+        },
+        {
+          "name": "强力滑行",
+          "description": "进行地面滑行，可以在过程中取消、改为大跳跃"
+        },
+        {
+          "name": "扰乱射击",
+          "description": "发射一道能量爆波，对范围内的敌人造成伤害"
+        },
+        {
+          "name": "磁能超频",
+          "description": "磁轨枪的能量会在一小段时间内自动充满"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/sojourn/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "soldier76",
+      "key": "soldier-76",
+      "name": "士兵：76",
+      "localizedName": "士兵76",
+      "aliases": [
+        "76",
+        "老兵"
+      ],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "重型脉冲步枪",
+          "description": "自动突击武器"
+        },
+        {
+          "name": "冲刺",
+          "description": "向前快速奔跑"
+        },
+        {
+          "name": "生化力场",
+          "description": "产生治疗力场，为你和队友恢复生命值"
+        },
+        {
+          "name": "旋风火箭",
+          "description": "发射数枚火箭"
+        },
+        {
+          "name": "战术锁定",
+          "description": "自动锁定视野内的目标"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/soldier-76/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "sombra",
+      "key": "sombra",
+      "name": "黑影",
+      "localizedName": "骇影",
+      "aliases": [
+        "黑客"
+      ],
+      "role": "输出",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "冲锋枪",
+          "description": "短距离自动武器"
+        },
+        {
+          "name": "骇入",
+          "description": "按住不放来骇入目标。被骇入的敌人无法使用技能，隔着墙也会被看到；被骇入的治疗包重生得更快，且敌人无法使用。受伤时会中断骇入程序"
+        },
+        {
+          "name": "相位转换器",
+          "description": "投掷一个信标，并传送到信标处。传送後会短暂启动匿踪"
+        },
+        {
+          "name": "植入病毒",
+          "description": "发射抛射物感染敌人并造成持续性伤害。病毒对被骇入的敌人造成伤害的速度提高"
+        },
+        {
+          "name": "电磁脉冲波",
+          "description": "对附近的所有敌人造成等同於目前生命值一定百分比的伤害，骇入敌人并摧毁你附近的屏障"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/sombra/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "symmetra",
+      "key": "symmetra",
+      "name": "秩序之光",
+      "localizedName": "辛梅塔",
+      "aliases": [
+        "阿三"
+      ],
+      "role": "输出",
+      "health": 275,
+      "armor": 0,
+      "shields": 150,
+      "abilities": [
+        {
+          "name": "光子投射器",
+          "description": "短程光线武器，伤害会逐渐提高  按住来积蓄能量，释放可射出能量爆弹"
+        },
+        {
+          "name": "哨戒塔",
+          "description": "装设小型炮塔，对敌人造成伤害时会使其缓速"
+        },
+        {
+          "name": "传送器",
+          "description": "设置两个暂时可以立即来回传送的传送器"
+        },
+        {
+          "name": "光子屏障",
+          "description": "设置一道巨大的能量屏障"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/symmetra/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "torbjorn",
+      "key": "torbjorn",
+      "name": "托比昂",
+      "localizedName": "托比昂",
+      "aliases": [
+        "炮台"
+      ],
+      "role": "输出",
+      "health": 300,
+      "armor": 75,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "铆钉枪",
+          "description": "射程长，但是射速缓慢的武器  射程短、威力强大，但是准度不佳的武器"
+        },
+        {
+          "name": "锻造鎚",
+          "description": "以鎚子修理炮塔或攻击敌人"
+        },
+        {
+          "name": "部署炮塔",
+          "description": "设置一座会自动建造的炮塔"
+        },
+        {
+          "name": "超负荷",
+          "description": "获得额外生命值，并且提高攻击、移动及装填子弹的速度"
+        },
+        {
+          "name": "炉心超载",
+          "description": "制造一池熔渣，对敌人造成伤害，并且对装甲造成额外伤害"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/torbjorn/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "tracer",
+      "key": "tracer",
+      "name": "猎空",
+      "localizedName": "闪光",
+      "aliases": [
+        "闪光"
+      ],
+      "role": "输出",
+      "health": 175,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "脉冲手枪",
+          "description": "短程全自动武器"
+        },
+        {
+          "name": "闪现",
+          "description": "朝你移动的方向传送"
+        },
+        {
+          "name": "回溯",
+          "description": "回到先前所在处和生命值"
+        },
+        {
+          "name": "脉冲炸弹",
+          "description": "丢出强力的黏性炸弹"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/tracer/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "vendetta",
+      "key": "vendetta",
+      "name": "斩仇",
+      "localizedName": "宿怨",
+      "aliases": [],
+      "role": "输出",
+      "health": 275,
+      "armor": 100,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "帕拉丁之牙",
+          "description": "硬化光粒大剑。使出挥砍连击，再以强力的劈头斩击收尾"
+        },
+        {
+          "name": "守备架式",
+          "description": "以剑格挡，降低正面伤害并招架近战攻击。格挡伤害时会消耗能量"
+        },
+        {
+          "name": "旋风冲刺",
+          "description": "向前突进，然後向周围挥砍一圈"
+        },
+        {
+          "name": "飞跃斩",
+          "description": "朝你面对的方向掷剑，然後飞向剑的位置"
+        },
+        {
+          "name": "剑波",
+          "description": "可於守备架式期间使用。消耗能量，射出一个大范围的抛射物"
+        },
+        {
+          "name": "碎裂刀刃",
+          "description": "能砍穿大多数防御，重创前方的敌人"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/vendetta/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "venture",
+      "key": "venture",
+      "name": "探奇",
+      "localizedName": "无畏",
+      "aliases": [],
+      "role": "输出",
+      "health": 250,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "智慧挖掘器",
+          "description": "发射一个震地炸弹，移动一小段距离後爆发"
+        },
+        {
+          "name": "钻头冲刺",
+          "description": "在地面上或地底时向前冲刺，并推开敌人。启用钻地时冷却速度会加快"
+        },
+        {
+          "name": "钻地",
+          "description": "在地底移动并获得无敌效果。按下或按住左Shift即可钻出地面并对敌人造成伤害"
+        },
+        {
+          "name": "地层震击",
+          "description": "发出伤害性冲击波"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/venture/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "widowmaker",
+      "key": "widowmaker",
+      "name": "黑百合",
+      "localizedName": "夺命女",
+      "aliases": [
+        "寡妇"
+      ],
+      "role": "输出",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "夺命之吻",
+          "description": "自动突击步枪  按住可切换为长程狙击武器"
+        },
+        {
+          "name": "爪钩",
+          "description": "射出爪钩把你拉往该处"
+        },
+        {
+          "name": "剧毒地雷",
+          "description": "射出毒气陷阱"
+        },
+        {
+          "name": "红外线视野",
+          "description": "让队友知道敌人行踪"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/widowmaker/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "winston",
+      "key": "winston",
+      "name": "温斯顿",
+      "localizedName": "温斯顿",
+      "aliases": [
+        "猩猩",
+        "猴子"
+      ],
+      "role": "重装",
+      "health": 625,
+      "armor": 200,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "特斯拉炮",
+          "description": "会向前方放电的武器  按住来积蓄能量，释放会发射集束电流"
+        },
+        {
+          "name": "喷射跳跃",
+          "description": "跳向空中，落在敌人身上时可对其造成伤害"
+        },
+        {
+          "name": "屏障产生器",
+          "description": "产生球形的能量屏障"
+        },
+        {
+          "name": "野性之怒",
+          "description": "生命值大幅提高，但是你只能跳跃和殴打敌人"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/winston/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "wreckingball",
+      "key": "wrecking-ball",
+      "name": "破坏球",
+      "localizedName": "火爆钢球",
+      "aliases": [
+        "仓鼠",
+        "球"
+      ],
+      "role": "重装",
+      "health": 725,
+      "armor": 125,
+      "shields": 150,
+      "abilities": [
+        {
+          "name": "四管加农炮",
+          "description": "自动突击武器"
+        },
+        {
+          "name": "稳固爪钩",
+          "description": "抛出爪钩来快速在区域中甩荡移动。高速碰撞敌人时，可造成伤害并击退对方"
+        },
+        {
+          "name": "滚球形态",
+          "description": "变形成一颗球，提高最高移动速度"
+        },
+        {
+          "name": "垂直打桩机",
+          "description": "重击脚下地面，对敌人造成伤害并且把他们打飞到空中"
+        },
+        {
+          "name": "自动调整型护盾",
+          "description": "产生暂时性的额外生命值，附近敌人数量越多提供的生命值就越多。部分生命值可以转移给队友"
+        },
+        {
+          "name": "地雷阵",
+          "description": "部署大量感应地雷"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/wrecking-ball/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "wuyang",
+      "key": "wuyang",
+      "name": "无漾",
+      "localizedName": "无漾",
+      "aliases": [],
+      "role": "支援",
+      "health": 225,
+      "armor": 0,
+      "shields": 0,
+      "abilities": [
+        {
+          "name": "玄武之杖",
+          "description": "发射一颗可造成伤害的水珠。按住以控制其发射轨道并强化爆炸效果"
+        },
+        {
+          "name": "恢复水流",
+          "description": "在一名队友身上放置被动治疗水流。对着目标按住，即可消耗资源来手动加速治疗"
+        },
+        {
+          "name": "奔腾洪流",
+          "description": "乘着水流，提高移动速度和跳跃高度"
+        },
+        {
+          "name": "涛浪爆发",
+          "description": "使用水保护队友或自己，在一小段时间後引爆。爆炸会击倒敌人并大幅治疗主要目标"
+        },
+        {
+          "name": "守护之浪",
+          "description": "向前放出一道水波，提高队友获得的治疗量并击退敌人"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/wuyang/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "zarya",
+      "key": "zarya",
+      "name": "查莉娅",
+      "localizedName": "札莉雅",
+      "aliases": [
+        "毛妹",
+        "毛子"
+      ],
+      "role": "重装",
+      "health": 550,
+      "armor": 0,
+      "shields": 225,
+      "abilities": [
+        {
+          "name": "粒子炮",
+          "description": "短程直射式光线武器  能量榴弹发射器"
+        },
+        {
+          "name": "粒子屏障",
+          "description": "在你周围产生伤害屏障"
+        },
+        {
+          "name": "投射屏障",
+          "description": "为一名队友制造伤害屏障"
+        },
+        {
+          "name": "引力弹",
+          "description": "丢出引力弹，把敌人拉向爆炸点"
+        },
+        {
+          "name": "能量",
+          "description": "屏障吸收伤害时可提高粒子炮的伤害"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/zarya/",
+      "verifiedAt": "2026-09-26"
+    },
+    {
+      "id": "zenyatta",
+      "key": "zenyatta",
+      "name": "禅雅塔",
+      "localizedName": "禅亚塔",
+      "aliases": [
+        "和尚"
+      ],
+      "role": "支援",
+      "health": 250,
+      "armor": 0,
+      "shields": 175,
+      "abilities": [
+        {
+          "name": "破灭之珠",
+          "description": "能量投射武器  积蓄能量，然後一口气连续射出许多珠子"
+        },
+        {
+          "name": "纷乱之珠",
+          "description": "朝敌人射出珠子，并且提高他们受到的伤害"
+        },
+        {
+          "name": "和谐之珠",
+          "description": "朝队友射出珠子来治疗他们"
+        },
+        {
+          "name": "超凡入圣",
+          "description": "进入无敌状态、提高移动速度，同时为附近队友恢复生命值"
+        },
+        {
+          "name": "猛踢",
+          "description": "快速近战攻击的伤害提高50%，并且大幅提高击退的距离"
+        }
+      ],
+      "source": "https://overwatch.blizzard.com/zh-tw/heroes/zenyatta/",
+      "verifiedAt": "2026-09-26"
+    }
+  ]
+}

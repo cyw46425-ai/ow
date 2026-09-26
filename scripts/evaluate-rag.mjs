@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sandbox = { window: {}, console, fetch: async () => { throw new Error("offline_eval"); } };
 vm.createContext(sandbox);
-for (const file of ["dist/knowledge.js", "dist/rag-engine.js"]) {
+for (const file of ["dist/knowledge.js", "dist/hero-skills.js", "dist/knowledge-expanded.js", "dist/rag-engine.js"]) {
   vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -49,5 +49,3 @@ const outputDirectory = path.join(root, "eval/results");
 fs.mkdirSync(outputDirectory, { recursive: true });
 fs.writeFileSync(path.join(outputDirectory, "latest.json"), `${JSON.stringify(result, null, 2)}\n`);
 console.log(JSON.stringify(result, null, 2));
-
-

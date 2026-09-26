@@ -56,7 +56,34 @@
   {"id":"a01","query":"最新一拳超人活动是不是2026年9月开始","category":"news","expected":["one-punch-2023","current-news"]},
   {"id":"a02","query":"总胜率最高的英雄一定克制毛妹吗","category":"heroes","expected":["stats-reading","zarya-detail"]},
   {"id":"a03","query":"我不想换英雄，打不过的时候还能怎么调整","category":"heroes","expected":["swap","counter-principle"]},
-  {"id":"a04","query":"直播页面能打开是不是代表选手正在播","category":"esports","expected":["pro-live-rooms"]}
+  {"id":"a04","query":"直播页面能打开是不是代表选手正在播","category":"esports","expected":["pro-live-rooms"]},
+
+  {"id":"k01","query":"玩家说毛妹大锤和尚DJ分别是谁","category":"basics","expected":["community-nicknames"]},
+  {"id":"k02","query":"C9到底是什么梗","category":"basics","expected":["community-c9"]},
+  {"id":"k03","query":"掉点白给炸鱼坐牢都是什么意思","category":"basics","expected":["community-teamfight-slang","community-rank-slang"]},
+  {"id":"k04","query":"地推放狗长枪双飞是什么阵容","category":"strategy","expected":["community-comp-slang"]},
+  {"id":"k05","query":"午时已到和天降正义为什么是梗","category":"basics","expected":["community-voice-memes"]},
+  {"id":"k06","query":"吸勾锤现在还能用吗","category":"strategy","expected":["community-historical-combo"]},
+
+  {"id":"s01","query":"DVa矩阵能挡光束吗","category":"strategy","expected":["interaction-matrix"]},
+  {"id":"s02","query":"源氏的闪为什么挡不住毛妹","category":"strategy","expected":["interaction-deflect"]},
+  {"id":"s03","query":"雾子铃可以解禁疗吗","category":"strategy","expected":["interaction-cleanse"]},
+  {"id":"s04","query":"安娜禁疗瓶怎么和队友联动","category":"strategy","expected":["interaction-antiheal"]},
+  {"id":"s05","query":"查莉娅给队友套泡有什么用","category":"strategy","expected":["interaction-zarya-bubble"]},
+  {"id":"s06","query":"纳米激素适合配什么大招","category":"strategy","expected":["interaction-nano"]},
+  {"id":"s07","query":"重力喷涌怎么配合半藏龙","category":"strategy","expected":["interaction-graviton"]},
+  {"id":"s08","query":"卢西奥加速为什么适合地推","category":"strategy","expected":["interaction-speed-brawl"]},
+  {"id":"s09","query":"生命之梭拉人和花瓣怎么用","category":"strategy","expected":["interaction-lifeweaver"]},
+  {"id":"s10","query":"安娜有哪些技能效果","category":"heroes","expected":["hero-skill-ana"]},
+  {"id":"s11","query":"飞天猫的完整技能是什么","category":"heroes","expected":["hero-skill-jetpackcat"]},
+  {"id":"s12","query":"金驭有什么技能","category":"heroes","expected":["hero-skill-domina"]},
+
+  {"id":"x01","query":"2026 OWCS有哪些主要赛区和战队","category":"esports","expected":["owcs-2026-ecosystem","owcs-2026-teams"]},
+  {"id":"x02","query":"2026世界杯中国队有哪些选手","category":"esports","expected":["team-china-2026"]},
+  {"id":"x03","query":"bo5 ft3单败双败是什么意思","category":"esports","expected":["esports-formats"]},
+  {"id":"x04","query":"Guxue是谁擅长什么英雄","category":"esports","expected":["pro-player-guxue"]},
+  {"id":"x05","query":"Leave和Shy分别是什么位置","category":"esports","expected":["pro-player-leave","pro-player-shy"]},
+  {"id":"x06","query":"Farway现在是什么选手","category":"esports","expected":["pro-player-farway"]},
+  {"id":"x07","query":"Sunzo为什么值得关注","category":"esports","expected":["pro-player-sunzo"]},
+  {"id":"x08","query":"职业比赛的主辅和自由人是什么","category":"esports","expected":["esports-roles"]}
 ]
-
-
